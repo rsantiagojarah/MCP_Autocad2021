@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "cad2021": {
+      "command": "C:\\Users\\rsant\\Desktop\\ProyectosPy\\MCP_Autocad2021\\.tools\\dotnet10\\dotnet.exe",
+      "args": [
+        "${PLUGIN_ROOT}/server/CadMcp.Server.dll"
+      ],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

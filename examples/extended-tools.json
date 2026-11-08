@@ -1,0 +1,314 @@
+[
+  {
+    "name": "cad_get_entity_geometry",
+    "method": "cad.entity_geometry",
+    "description": "Geometría detallada WCS: vértices/bulges paginados de polilínea, cotas, límites y volumen/centroide de sólidos.",
+    "write": false
+  },
+  {
+    "name": "cad_create_polyline3d",
+    "method": "cad.create_polyline3d",
+    "description": "Crea una polilínea 3D con vértices WCS y capa. No repitas el primer vértice. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_create_circle",
+    "method": "cad.create_circle",
+    "description": "Crea un círculo horizontal con centro WCS, radio positivo y capa. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_create_text",
+    "method": "cad.create_text",
+    "description": "Crea texto DBText; altura positiva y rotación en radianes. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_create_solid",
+    "method": "cad.create_solid",
+    "description": "Crea box (position=esquina mínima, length/width/height) o cylinder (position=centro de base, radius/height), ejes WCS. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_transform_entities",
+    "method": "cad.transform_entities",
+    "description": "Mueve, rota en Z y escala uniformemente entidades AutoCAD o copias. Orden: escala, rotación, desplazamiento; radianes; no modifica objetos Civil. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_delete_entities",
+    "method": "cad.delete_entities",
+    "description": "Elimina únicamente entidades AutoCAD por handles explícitos; no elimina objetos Civil. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_offset_curve",
+    "method": "cad.offset_curve",
+    "description": "Crea offsets nativos de curva AutoCAD preservando la fuente; distancia con signo en unidades del dibujo. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_extrude_polyline",
+    "method": "cad.extrude_polyline",
+    "description": "Extruye un contorno cerrado a sólido; height con signo. Conserva la polilínea fuente. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_boolean_solids",
+    "method": "cad.boolean_solids",
+    "description": "Unión, resta o intersección de sólidos. Modifica targetHandle y conserva los sólidos herramienta. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_create_retaining_wall",
+    "method": "cad.create_retaining_wall",
+    "description": "Crea pantalla y zapata como dos sólidos siguiendo polilínea horizontal abierta (rectas/arcos). Polilínea=eje de pantalla; talón a izquierda y puntera a derecha del recorrido. Cota fuente=coronación de zapata salvo footingTopElevation. Heel/toe se miden desde las caras de pantalla; capas creadas automáticamente. No verifica diseño estructural. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_set_view",
+    "method": "cad.set_view",
+    "description": "Encuadra el espacio modelo en vista superior o isométrica; cambia solo la vista. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_list_styles",
+    "method": "civil.styles",
+    "description": "Lista estilos disponibles y handles compatibles para crear objetos; no presupone nombres de plantilla.",
+    "write": false
+  },
+  {
+    "name": "civil_list_objects",
+    "method": "civil.objects",
+    "description": "Inventario paginado de objetos Civil por familia.",
+    "write": false
+  },
+  {
+    "name": "civil_get_object_info",
+    "method": "civil.object_info",
+    "description": "Detalles de superficie (estadísticas/volúmenes), eje, perfil/PVI, feature line, red/piezas, corredor/regiones, sección o parcela. Colecciones extensas paginadas.",
+    "write": false
+  },
+  {
+    "name": "civil_list_cogo_points",
+    "method": "civil.cogo_points",
+    "description": "Puntos COGO con número, coordenadas WCS, descripción y bloqueo.",
+    "write": false
+  },
+  {
+    "name": "civil_update_cogo_points",
+    "method": "civil.update_cogo_points",
+    "description": "Actualiza coordenadas, nombre o descripción de puntos COGO; rechaza puntos bloqueados o de levantamiento. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_create_point_group",
+    "method": "civil.create_point_group",
+    "description": "Crea grupo a partir de números COGO existentes y explícitos. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_create_tin_surface",
+    "method": "civil.create_tin_surface",
+    "description": "Crea terreno TIN con al menos tres puntos WCS no colineales. styleHandle opcional. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_add_surface_points",
+    "method": "civil.add_surface_points",
+    "description": "Añade vértices WCS a una superficie TIN y reconstruye. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_add_surface_breaklines",
+    "method": "civil.add_surface_breaklines",
+    "description": "Añade líneas de rotura estándar desde líneas, polilíneas 2D/3D o feature lines y reconstruye. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_add_surface_boundary",
+    "method": "civil.add_surface_boundary",
+    "description": "Añade límite exterior, oculto o visible desde polilínea cerrada y reconstruye. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_rebuild_surface",
+    "method": "civil.rebuild_surface",
+    "description": "Reconstruye una superficie existente. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_get_surface_triangles",
+    "method": "civil.surface_triangles",
+    "description": "Triángulos TIN visibles con tres vértices WCS, paginados.",
+    "write": false
+  },
+  {
+    "name": "civil_create_volume_surface",
+    "method": "civil.create_volume_surface",
+    "description": "Crea superficie TIN de comparación y devuelve corte, relleno y balance calculados por Civil 3D. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_extract_surface_contours",
+    "method": "civil.extract_surface_contours",
+    "description": "Extrae curvas como entidades AutoCAD a intervalo positivo en capa; máximo 2000 niveles y 10000 curvas. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_create_alignment",
+    "method": "civil.create_alignment",
+    "description": "Crea alineamiento desde polilínea abierta, conserva fuente, sin añadir curvas automáticas. Estilos omitidos=primeros disponibles. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_sample_alignment",
+    "method": "civil.sample_alignment",
+    "description": "Convierte estaciones/offsets del eje a coordenadas WCS. Offset Civil: negativo izquierda, positivo derecha.",
+    "write": false
+  },
+  {
+    "name": "civil_station_offset",
+    "method": "civil.station_offset",
+    "description": "Convierte puntos WCS en estaciones y offsets respecto al eje.",
+    "write": false
+  },
+  {
+    "name": "civil_create_surface_profile",
+    "method": "civil.create_surface_profile",
+    "description": "Crea perfil de terreno desde eje y superficie; admite offset y rango de estaciones. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_create_layout_profile",
+    "method": "civil.create_layout_profile",
+    "description": "Crea rasante por PVI crecientes unidos con tangentes; no incorpora curvas verticales automáticas. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_sample_profile",
+    "method": "civil.sample_profile",
+    "description": "Consulta elevación de perfil en estaciones explícitas; distingue muestras fuera de rango.",
+    "write": false
+  },
+  {
+    "name": "civil_create_profile_view",
+    "method": "civil.create_profile_view",
+    "description": "Crea vista de perfil para un alineamiento en posición WCS. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_create_feature_line",
+    "method": "civil.create_feature_line",
+    "description": "Crea feature line desde línea, arco o polilínea 2D/3D; siteHandle opcional. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_set_feature_line_elevations",
+    "method": "civil.set_feature_line_elevations",
+    "description": "Asigna a una feature line las elevaciones de una superficie. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_create_site",
+    "method": "civil.create_site",
+    "description": "Crea un emplazamiento Civil (Site). Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_create_sample_lines",
+    "method": "civil.create_sample_lines",
+    "description": "Crea grupo y líneas de muestreo en estaciones, con anchos izquierdo/derecho y superficies opcionales. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_list_parts",
+    "method": "civil.parts",
+    "description": "Explora familias y tamaños de lista de piezas por dominio. Primero lista familias; después indica familyHandle para sus tamaños.",
+    "write": false
+  },
+  {
+    "name": "civil_create_pipe_network",
+    "method": "civil.create_pipe_network",
+    "description": "Crea red de gravedad con lista de piezas y referencias opcionales a superficie/eje; no realiza cálculo hidráulico. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_add_network_parts",
+    "method": "civil.add_network_parts",
+    "description": "Añade tuberías rectas y estructuras desde familias/tamaños de catálogo. Coordenadas de tubería al eje central. No aplica reglas que alteren las cotas ni conecta automáticamente. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_connect_pipe",
+    "method": "civil.connect_pipe",
+    "description": "Conecta extremo start/end de tubería a estructura de la misma red sin forzar desconexiones. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_update_pipe",
+    "method": "civil.update_pipe",
+    "description": "Actualiza extremos al eje central de tubería con extremos libres. Devuelve pendiente y cotas. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_create_corridor",
+    "method": "civil.create_corridor",
+    "description": "Crea corredor, línea base y región desde eje/rasante y ensamblaje existente; reconstruye. El ensamblaje debe tener subensamblajes y objetivos resueltos. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_rebuild_corridor",
+    "method": "civil.rebuild_corridor",
+    "description": "Reconstruye un corredor existente. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_add_surface_point_groups",
+    "method": "civil.add_surface_point_groups",
+    "description": "Añade grupos de puntos COGO a la definición de una superficie TIN y reconstruye. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_add_profile_pvi",
+    "method": "civil.add_profile_pvi",
+    "description": "Añade PVI con tangente, parábola simétrica/asimétrica o arco circular a una rasante FG. Parámetros condicionales: curveLength; beforeLength/afterLength; radius. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_create_section_view",
+    "method": "civil.create_section_view",
+    "description": "Crea vista de sección transversal para una línea de muestreo. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_update_structure",
+    "method": "civil.update_structure",
+    "description": "Ajusta cotas de tapa/fondo de estructura de red. Al indicar tapa desactiva su ajuste automático a superficie. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_create_corridor_surface",
+    "method": "civil.create_corridor_surface",
+    "description": "Crea superficie de corredor por códigos de enlace existentes y límite de extensión opcional. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_set_corridor_targets",
+    "method": "civil.set_corridor_targets",
+    "description": "Asigna objetivos por los índices devueltos por civil_get_object_info. Consulta índices otra vez si cambia la estructura del corredor. Lista de handles vacía libera ese objetivo. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_set_corridor_frequency",
+    "method": "civil.set_corridor_frequency",
+    "description": "Configura el intervalo de aplicación de ensamblajes en una región de corredor y reconstruye. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "civil_update_object_style",
+    "method": "civil.update_object_style",
+    "description": "Asigna un estilo compatible a superficie, eje, perfil, vista, punto, feature line, corredor o línea de muestreo. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  }
+]

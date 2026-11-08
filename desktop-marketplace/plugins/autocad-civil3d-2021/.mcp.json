@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "cad2021": {
+      "command": "dotnet",
+      "args": ["${PLUGIN_ROOT}/server/CadMcp.Server.dll"],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

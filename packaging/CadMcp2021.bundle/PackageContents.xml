@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage SchemaVersion="1.0" AppVersion="0.4.0" ProductCode="{25E562A0-5979-4AB0-979C-79A31D639658}" UpgradeCode="{EC4F896E-63A5-484E-91B6-2A4B871C13B1}" Name="CadMcp2021" Description="Puente MCP para AutoCAD y Civil 3D 2021" Author="CadMcp2021">
+  <CompanyDetails Name="CadMcp2021" />
+  <Components>
+    <RuntimeRequirements OS="Win64" Platform="AutoCAD*" SeriesMin="R24.0" SeriesMax="R24.0" />
+    <ComponentEntry AppName="CadMcp2021" AppDescription="Puente MCP local" ModuleName="./Contents/Windows/CadMcp.AutoCAD.dll" LoadOnAutoCADStartup="False" LoadOnCommandInvocation="True">
+      <Commands GroupName="CADMCP2021">
+        <Command Global="CADMCPSTART" Local="CADMCPSTART" />
+        <Command Global="CADMCPSTATUS" Local="CADMCPSTATUS" />
+        <Command Global="CADMCPSTOP" Local="CADMCPSTOP" />
+      </Commands>
+    </ComponentEntry>
+  </Components>
+</ApplicationPackage>

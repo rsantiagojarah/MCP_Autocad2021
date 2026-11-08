@@ -1,0 +1,17 @@
+{
+  "name": "autocad-civil3d-2021",
+  "version": "0.1.0",
+  "description": "Consultas y operaciones por lotes en AutoCAD y Civil 3D 2021 mediante un puente local.",
+  "mcpServers": "./.mcp.json",
+  "requires_local_executor": true,
+  "interface": {
+    "displayName": "AutoCAD y Civil 3D 2021",
+    "shortDescription": "Conecta tus dibujos con herramientas CAD locales.",
+    "longDescription": "Herramientas locales para documentos, capas, geometría, superficies, alineamientos y puntos COGO de Autodesk 2021. Requiere el puente CadMcp cargado y .NET 8. Validación funcional dentro de Autodesk pendiente.",
+    "developerName": "Proyecto CAD local",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": ["Consulta las sesiones disponibles de AutoCAD y Civil 3D y sus documentos abiertos."],
+    "brandColor": "#167C80"
+  }
+}

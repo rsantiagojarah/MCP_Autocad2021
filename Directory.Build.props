@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup>
+    <ModernTargetFramework Condition="'$(ModernTargetFramework)' == ''">net10.0</ModernTargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Version>0.4.0</Version>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Deterministic>true</Deterministic>
+    <NuGetAudit>false</NuGetAudit>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(UseInstalledFrameworkReferences)' == 'true'">
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+    <FrameworkPathOverride>$(WINDIR)\Microsoft.NET\Framework64\v4.0.30319</FrameworkPathOverride>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,20 @@
+{
+  "name": "cad-local",
+  "interface": {
+    "displayName": "Herramientas CAD locales"
+  },
+  "plugins": [
+    {
+      "source": {
+        "path": "./plugins/autocad-civil3d-2021-net10",
+        "source": "local"
+      },
+      "name": "autocad-civil3d-2021",
+      "category": "Productivity",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    }
+  ]
+}

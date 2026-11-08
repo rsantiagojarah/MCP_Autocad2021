@@ -1,0 +1,8 @@
+{
+  "surfaceHandle": "REEMPLAZAR_CON_HANDLE_DE_SUPERFICIE",
+  "tolerance": 0.001,
+  "points": [
+    { "x": 10.0, "y": 10.0, "expectedElevation": 3.0 },
+    { "x": 20.0, "y": 10.0, "expectedElevation": 4.0 }
+  ]
+}

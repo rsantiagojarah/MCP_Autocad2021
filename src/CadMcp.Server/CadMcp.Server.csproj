@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>$(ModernTargetFramework)</TargetFramework>
+    <UseOfficialMcpSdk Condition="'$(UseOfficialMcpSdk)' == ''">true</UseOfficialMcpSdk>
+  </PropertyGroup>
+  <ItemGroup><ProjectReference Include="../CadMcp.Core/CadMcp.Core.csproj" /></ItemGroup>
+  <ItemGroup Condition="'$(UseOfficialMcpSdk)' == 'true'">
+    <PackageReference Include="ModelContextProtocol" Version="1.2.0" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <Compile Remove="CompatibilityHost.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(UseOfficialMcpSdk)' != 'true'"><Compile Remove="OfficialHost.cs" /><Compile Remove="OfficialTools.cs" /><Compile Remove="ExtendedOfficialTools.cs" /><Compile Remove="SectionOfficialTools.cs" /></ItemGroup>
+</Project>

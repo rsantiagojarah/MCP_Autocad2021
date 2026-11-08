@@ -1,0 +1,7 @@
+# Referencia para Codex; el registro automático usa scripts/Register-CodexMcp.ps1.
+# Mantiene el formato de Codex, que utiliza mcp_servers y TOML.
+[mcp_servers.autocad-civil3d-2021]
+command = 'C:\Program Files\dotnet\dotnet.exe'
+args = ['C:\Users\rsant\Desktop\ProyectosPy\MCP_Autocad2021\artifacts\compatibility-net8\server\CadMcp.Server.dll']
+startup_timeout_sec = 20
+tool_timeout_sec = 45

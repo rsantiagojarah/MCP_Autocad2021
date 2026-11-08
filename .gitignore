@@ -1,0 +1,19 @@
+**/bin/
+**/obj/
+.tools/
+artifacts/
+TestResults/
+*.user
+*.suo
+
+# Paquetes generados del complemento de escritorio
+desktop-marketplace/plugins/*/server/
+
+# Registros locales y credenciales
+acad.err
+*.log
+.env
+.env.*
+!.env.example
+**/__pycache__/
+*.pyc

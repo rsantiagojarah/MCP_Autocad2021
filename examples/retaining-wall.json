@@ -1,0 +1,19 @@
+{
+  "tool": "cad_create_retaining_wall",
+  "arguments": {
+    "sessionId": "REPLACE_FROM_cad_list_sessions",
+    "documentId": "REPLACE_FROM_cad_list_documents",
+    "operationId": "f3474660-59b9-4768-8ac9-c6eed1482d6d",
+    "coordinateSpace": "WCS",
+    "units": "Meters",
+    "sourceHandle": "6D43",
+    "stemThickness": 0.25,
+    "stemHeight": 3.0,
+    "heel": 2.0,
+    "toe": 2.0,
+    "footingThickness": 0.5,
+    "stemLayer": "MURO_PANTALLA",
+    "footingLayer": "MURO_ZAPATA"
+  },
+  "note": "Preparado, no enviado. Verificar nuevamente el handle y los identificadores antes de ejecutar. Conservar operationId solo para reintentos de esta misma operación."
+}

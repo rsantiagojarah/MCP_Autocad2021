@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFrameworks>net48;$(ModernTargetFramework)</TargetFrameworks></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../CadMcp.Contracts/CadMcp.Contracts.csproj" /></ItemGroup>
+</Project>

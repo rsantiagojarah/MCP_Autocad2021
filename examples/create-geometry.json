@@ -1,0 +1,11 @@
+{
+  "sessionId": "REEMPLAZAR_CON_CAD_LIST_SESSIONS",
+  "documentId": "REEMPLAZAR_CON_CAD_LIST_DOCUMENTS",
+  "operationId": "b905f5d5-22d6-49ca-ae53-e00963ad2ecf",
+  "coordinateSpace": "WCS",
+  "units": "Meters",
+  "entities": [
+    { "type": "line", "layer": "0", "points": [ { "x": 0, "y": 0, "z": 0 }, { "x": 3, "y": 4, "z": 0 } ] },
+    { "type": "polyline", "layer": "0", "closed": true, "points": [ { "x": 0, "y": 0, "z": 0 }, { "x": 10, "y": 0, "z": 0 }, { "x": 10, "y": 10, "z": 0 }, { "x": 0, "y": 10, "z": 0 } ] }
+  ]
+}

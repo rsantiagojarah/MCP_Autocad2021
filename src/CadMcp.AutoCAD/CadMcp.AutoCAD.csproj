@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+    <AutoCADDir Condition="'$(AutoCADDir)' == ''">C:\Program Files\Autodesk\AutoCAD 2021</AutoCADDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../CadMcp.Core/CadMcp.Core.csproj" />
+    <Reference Include="AcCoreMgd"><HintPath>$(AutoCADDir)\AcCoreMgd.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="AcDbMgd"><HintPath>$(AutoCADDir)\AcDbMgd.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="AcMgd"><HintPath>$(AutoCADDir)\AcMgd.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="CheckAutoCAD" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(AutoCADDir)\AcDbMgd.dll')" Text="No se encontraron las bibliotecas de AutoCAD 2021. Define AutoCADDir." />
+  </Target>
+</Project>

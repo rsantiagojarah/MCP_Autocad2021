@@ -4,6 +4,9 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
+[xml]$projectProperties = Get-Content -LiteralPath (Join-Path $projectRoot 'Directory.Build.props') -Raw
+$projectVersion = $projectProperties.SelectSingleNode('/Project/PropertyGroup/Version').InnerText
+if ([string]::IsNullOrWhiteSpace($projectVersion)) { throw 'Falta Version en Directory.Build.props.' }
 Push-Location -LiteralPath $projectRoot
 try {
     $env:DOTNET_CLI_HOME = Join-Path $projectRoot '.tools\cli'
@@ -46,7 +49,7 @@ try {
     $configObject = @{ mcpServers = @{ 'autocad-civil3d-2021' = @{ command = 'dotnet'; args = @((Join-Path $serverOutput 'CadMcp.Server.dll')) } } }
     $configObject | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath (Join-Path $outputRoot 'mcp.config.json') -Encoding utf8
     Copy-Item -LiteralPath 'README.md' -Destination $outputRoot -Force
-    $artifactManifest = @{ version = '0.1.0'; variant = $variant; framework = $modern; officialSdk = -not $Offline; builtUtc = [DateTime]::UtcNow.ToString('o') }
+    $artifactManifest = @{ version = $projectVersion; variant = $variant; framework = $modern; officialSdk = -not $Offline; builtUtc = [DateTime]::UtcNow.ToString('o') }
     $artifactManifest | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $outputRoot 'build.json') -Encoding utf8
     Write-Output "Paquete generado: $outputRoot"
 } finally { Pop-Location }

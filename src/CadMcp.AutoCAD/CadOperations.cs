@@ -35,7 +35,7 @@ public sealed class CadOperations
         sessionId = PipeNames.Prefix + Process.GetCurrentProcess().Id,
         bridgeInstanceId = instanceId,
         processId = Process.GetCurrentProcess().Id,
-        bridgeVersion = "0.4.0",
+        bridgeVersion = typeof(CadOperations).Assembly.GetName().Version!.ToString(3),
         product = Convert.ToString(AcApp.GetSystemVariable("PRODUCT")),
         version = Convert.ToString(AcApp.GetSystemVariable("ACADVER")),
         civil3d = registry.Methods.Contains("civil.surfaces"),
@@ -75,7 +75,8 @@ public sealed class CadOperations
             var layers = ids.Skip(offset).Take(limit).Select(id =>
             {
                 var layer = (LayerTableRecord)tr.GetObject(id, OpenMode.ForRead);
-                return new { name = layer.Name, colorIndex = layer.Color.ColorIndex, locked = layer.IsLocked, frozen = layer.IsFrozen, off = layer.IsOff };
+                return new { name = layer.Name, colorIndex = layer.Color.ColorIndex, locked = layer.IsLocked, frozen = layer.IsFrozen, off = layer.IsOff,
+                    lineweight = (int)layer.LineWeight, linetype = ((LinetypeTableRecord)tr.GetObject(layer.LinetypeObjectId,OpenMode.ForRead)).Name };
             }).ToArray();
             return JObject.FromObject(new { layers, nextOffset = offset + layers.Length < ids.Length ? (int?)(offset + layers.Length) : null });
         }
@@ -130,6 +131,7 @@ public sealed class CadOperations
     {
         var result = new JObject { ["handle"] = entity.Handle.ToString(), ["dxfType"] = entity.GetRXClass().DxfName,
             ["layer"] = entity.Layer, ["colorIndex"] = entity.ColorIndex };
+        result["lineweight"] = (int)entity.LineWeight; result["linetype"] = entity.Linetype; result["linetypeScale"] = entity.LinetypeScale;
         if (entity is Line line) { result["start"] = Point(line.StartPoint); result["end"] = Point(line.EndPoint); result["length"] = line.Length; }
         else if (entity is Polyline poly)
         {
@@ -140,8 +142,9 @@ public sealed class CadOperations
         else if (entity is Arc arc) result["length"] = arc.Length;
         else if (entity is DBPoint point) result["position"] = Point(point.Position);
         else if (entity is Solid3d solid) result["volume"] = solid.MassProperties.Volume;
-        else if (entity is DBText text) { result["text"] = Clip(text.TextString, 4096); result["textTruncated"] = text.TextString.Length > 4096; }
-        else if (entity is MText mtext) { result["text"] = Clip(mtext.Contents, 4096); result["textTruncated"] = mtext.Contents.Length > 4096; }
+        else if (entity is DBText text) { result["text"] = Clip(text.TextString, 4096); result["textTruncated"] = text.TextString.Length > 4096; result["styleHandle"] = text.TextStyleId.Handle.ToString(); result["height"] = text.Height; result["rotation"] = text.Rotation; result["alignment"] = text.Justify.ToString(); }
+        else if (entity is MText mtext) { result["text"] = Clip(mtext.Contents, 4096); result["textTruncated"] = mtext.Contents.Length > 4096; result["styleHandle"] = mtext.TextStyleId.Handle.ToString(); result["height"] = mtext.TextHeight; result["rotation"] = mtext.Rotation; result["alignment"] = mtext.Attachment.ToString(); }
+        else if (entity is Hatch hatch) { result["pattern"] = hatch.PatternName; result["scale"] = hatch.PatternScale; result["angle"] = hatch.PatternAngle; result["associative"] = hatch.Associative; result["loopCount"] = hatch.NumberOfLoops; }
         else if (entity is BlockReference block)
         {
             var attributes = new JArray();
@@ -203,12 +206,16 @@ public sealed class CadOperations
         {
             Validation.Require(spec != null && !string.IsNullOrWhiteSpace(spec.Name) && spec.ColorIndex >= 1 && spec.ColorIndex <= 255, "Nombre o color de capa inválido.");
             SymbolUtilityServices.ValidateSymbolName(spec!.Name, false);
+            if (spec.Lineweight.HasValue) LineGraphicsRules.Weight(spec.Lineweight.Value,true);
+            if (spec.Linetype != null) LineGraphicsRules.Name(spec.Linetype);
         }
         var doc = DocumentAccess.Active(request);
         using (doc.LockDocument())
         using (var tr = doc.Database.TransactionManager.StartTransaction())
         {
             var table = (LayerTable)tr.GetObject(doc.Database.LayerTableId, OpenMode.ForRead);
+            foreach (var spec in specs)
+                if (spec.Linetype != null) CadLineGraphicsOperations.Linetype(doc,tr,spec.Linetype,true);
             foreach (var spec in specs)
             {
                 LayerTableRecord layer;
@@ -219,7 +226,10 @@ public sealed class CadOperations
                     layer = new LayerTableRecord { Name = spec.Name }; table.Add(layer); tr.AddNewlyCreatedDBObject(layer, true);
                 }
                 if (layer.IsDependent) throw new CadFault("DEPENDENT_LAYER", "No se modifica una capa de referencia externa.");
+                if ((spec.Lineweight.HasValue || spec.Linetype != null) && layer.IsLocked) throw new CadFault("LAYER_LOCKED", "La capa está bloqueada: "+spec.Name);
                 layer.Color = Color.FromColorIndex(ColorMethod.ByAci, (short)spec.ColorIndex);
+                if (spec.Lineweight.HasValue) layer.LineWeight = (LineWeight)spec.Lineweight.Value;
+                if (spec.Linetype != null) layer.LinetypeObjectId = CadLineGraphicsOperations.Linetype(doc,tr,spec.Linetype,true);
             }
             tr.Commit(); return JObject.FromObject(new { updated = specs.Count });
         }
@@ -229,7 +239,13 @@ public sealed class CadOperations
         var specs = request.Arguments["entities"]?.ToObject<List<UpdateEntitySpec>>() ?? throw new CadFault("INVALID_ARGUMENT", "Falta entities.");
         Validation.Require(specs.Count > 0 && specs.Count <= 10000, "El lote admite entre 1 y 10000 entidades.");
         foreach (var spec in specs)
-            Validation.Require(spec != null && (spec.Layer != null || spec.ColorIndex.HasValue) && (!spec.ColorIndex.HasValue || (spec.ColorIndex >= 0 && spec.ColorIndex <= 256)), "Especifica layer o colorIndex (0 a 256).");
+        {
+            Validation.Require(spec != null && (spec.Layer != null || spec.ColorIndex.HasValue || spec.Lineweight.HasValue || spec.Linetype != null || spec.LinetypeScale.HasValue)
+                && (!spec.ColorIndex.HasValue || (spec.ColorIndex >= 0 && spec.ColorIndex <= 256)), "Especifica una propiedad válida: capa, color ACI o propiedades de línea.");
+            if (spec!.Lineweight.HasValue) LineGraphicsRules.Weight(spec.Lineweight.Value);
+            if (spec.Linetype != null) LineGraphicsRules.Name(spec.Linetype);
+            if (spec.LinetypeScale.HasValue) LineGraphicsRules.Scale(spec.LinetypeScale.Value);
+        }
         var doc = DocumentAccess.Active(request);
         using (doc.LockDocument())
         using (var tr = doc.Database.TransactionManager.StartTransaction())
@@ -239,8 +255,13 @@ public sealed class CadOperations
                 var id = DocumentAccess.ObjectId(doc.Database, spec.Handle);
                 var entity = tr.GetObject(id, OpenMode.ForWrite) as Entity ?? throw new CadFault("INVALID_OBJECT", "El handle no corresponde a una entidad.");
                 DocumentAccess.Layer(tr, doc.Database, entity.Layer);
+                if (spec.Lineweight.HasValue || spec.Linetype != null || spec.LinetypeScale.HasValue)
+                    CadLineGraphicsOperations.ValidateEntity(doc,tr,entity);
                 if (spec.Layer != null) entity.LayerId = DocumentAccess.Layer(tr, doc.Database, spec.Layer).ObjectId;
                 if (spec.ColorIndex.HasValue) entity.ColorIndex = spec.ColorIndex.Value;
+                if (spec.Lineweight.HasValue) entity.LineWeight = (LineWeight)spec.Lineweight.Value;
+                if (spec.Linetype != null) entity.LinetypeId = CadLineGraphicsOperations.Linetype(doc,tr,spec.Linetype);
+                if (spec.LinetypeScale.HasValue) entity.LinetypeScale = spec.LinetypeScale.Value;
             }
             tr.Commit(); return JObject.FromObject(new { updated = specs.Count });
         }

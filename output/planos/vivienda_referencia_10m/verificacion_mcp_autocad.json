@@ -1,0 +1,333 @@
+{
+  "passed": true,
+  "transport": "MCP stdio -> production bridge 0.6.0 -> AutoCAD 2021",
+  "documentId": "47156328-4a99-4636-a4dc-eaf2df3d1959",
+  "documentName": "Drawing1.dwg",
+  "units": "Millimeters",
+  "frontageMillimetres": 10000,
+  "depthMillimetres": 22300,
+  "depthReferenceOnly": true,
+  "entityCount": 1340,
+  "nativeEntityTypes": {
+    "LINE": 683,
+    "LWPOLYLINE": 406,
+    "CIRCLE": 114,
+    "TEXT": 114,
+    "HATCH": 23
+  },
+  "nativeHatchHandles": [
+    "606",
+    "609",
+    "60C",
+    "60F",
+    "612",
+    "615",
+    "618",
+    "61B",
+    "61E",
+    "621",
+    "624",
+    "627",
+    "62A",
+    "62D",
+    "630",
+    "633",
+    "636",
+    "639",
+    "63C",
+    "63F",
+    "642",
+    "645",
+    "648"
+  ],
+  "linePropertyEvidence": {
+    "entities": [
+      {
+        "handle": "B6",
+        "type": "Line",
+        "layer": "V10_A_VENTANA",
+        "dxfType": "LINE",
+        "lineweight": -1,
+        "lineweightMode": "ByLayer",
+        "lineweightMm": null,
+        "linetype": "ByLayer",
+        "linetypeHandle": "5C",
+        "linetypeScale": 1.0,
+        "colorIndex": 256,
+        "layerLineweight": 25,
+        "layerLinetype": "Continuous",
+        "effectiveLineweightMm": 0.25,
+        "effectiveLinetype": "Continuous",
+        "globalScale": 30.0,
+        "combinedLinetypeScale": 30.0,
+        "scaleNote": "El producto global/objeto no incluye escalas de ventanas gráficas, MSLTSCALE/PSLTSCALE ni impresión CTB/STB."
+      },
+      {
+        "handle": "520",
+        "type": "Circle",
+        "layer": "V10_A_PUERTA",
+        "dxfType": "CIRCLE",
+        "lineweight": -1,
+        "lineweightMode": "ByLayer",
+        "lineweightMm": null,
+        "linetype": "ByLayer",
+        "linetypeHandle": "5C",
+        "linetypeScale": 1.0,
+        "colorIndex": 256,
+        "layerLineweight": 25,
+        "layerLinetype": "Continuous",
+        "effectiveLineweightMm": 0.25,
+        "effectiveLinetype": "Continuous",
+        "globalScale": 30.0,
+        "combinedLinetypeScale": 30.0,
+        "scaleNote": "El producto global/objeto no incluye escalas de ventanas gráficas, MSLTSCALE/PSLTSCALE ni impresión CTB/STB."
+      },
+      {
+        "handle": "592",
+        "type": "DBText",
+        "layer": "V10_A_TEXTO",
+        "dxfType": "TEXT",
+        "lineweight": -1,
+        "lineweightMode": "ByLayer",
+        "lineweightMm": null,
+        "linetype": "ByLayer",
+        "linetypeHandle": "5C",
+        "linetypeScale": 1.0,
+        "colorIndex": 256,
+        "layerLineweight": 13,
+        "layerLinetype": "Continuous",
+        "effectiveLineweightMm": 0.13,
+        "effectiveLinetype": "Continuous",
+        "globalScale": 30.0,
+        "combinedLinetypeScale": 30.0,
+        "scaleNote": "El producto global/objeto no incluye escalas de ventanas gráficas, MSLTSCALE/PSLTSCALE ni impresión CTB/STB."
+      }
+    ]
+  },
+  "activeDrawingSaved": false,
+  "previousGeometryCount": 0,
+  "layerNames": [
+    "V10_A_MURO_CORTE",
+    "V10_A_MURO_RELLENO",
+    "V10_A_LIMITE",
+    "V10_A_PUERTA",
+    "V10_A_VENTANA",
+    "V10_A_MUEBLE",
+    "V10_A_MUEBLE_DETALLE",
+    "V10_A_SANITARIO",
+    "V10_A_ESCALERA",
+    "V10_A_PISO_TRAMA",
+    "V10_A_PROYECCION",
+    "V10_A_VACIO",
+    "V10_A_JARDIN",
+    "V10_A_TEXTO",
+    "V10_A_COTA",
+    "V10_A_ROTULO",
+    "V10_A_EJE",
+    "V10_A_VPORT_NOPLOT"
+  ],
+  "notes": [
+    "Created directly using MCP tools in the previously empty active drawing.",
+    "Furniture consists of individually editable native entities; no raster underlay.",
+    "Separate DXF includes reusable blocks, dimensions and an A2 paperspace layout.",
+    "Current MCP supports no save or paperspace creation tool; current drawing remains unsaved."
+  ],
+  "finalRefinement": {
+    "movedEntities": 20,
+    "redundantWallCurvesRemoved": 39
+  },
+  "nativeLayers": {
+    "layers": [
+      {
+        "name": "0",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": -3,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_MURO_CORTE",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 50,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_MURO_RELLENO",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 9,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_LIMITE",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 35,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_PUERTA",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 25,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_VENTANA",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 25,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_MUEBLE",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 18,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_MUEBLE_DETALLE",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 9,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_SANITARIO",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 18,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_ESCALERA",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 18,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_PISO_TRAMA",
+        "colorIndex": 9,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 9,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_PROYECCION",
+        "colorIndex": 9,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 13,
+        "linetype": "DASHED"
+      },
+      {
+        "name": "V10_A_VACIO",
+        "colorIndex": 9,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 9,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_JARDIN",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 9,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_TEXTO",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 13,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_COTA",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 13,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_ROTULO",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 18,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_A_EJE",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 13,
+        "linetype": "CENTER"
+      },
+      {
+        "name": "V10_A_VPORT_NOPLOT",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 9,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_0",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 13,
+        "linetype": "Continuous"
+      },
+      {
+        "name": "V10_Defpoints",
+        "colorIndex": 7,
+        "locked": false,
+        "frozen": false,
+        "off": false,
+        "lineweight": 13,
+        "linetype": "Continuous"
+      }
+    ],
+    "nextOffset": null
+  }
+}

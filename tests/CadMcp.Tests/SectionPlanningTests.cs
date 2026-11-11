@@ -10,6 +10,21 @@ namespace CadMcp.Tests;
 
 public sealed class SectionPlanningTests
 {
+    [Theory]
+    [InlineData("civil_list_styles", "section")]
+    [InlineData("civil_list_styles", "sectionView")]
+    [InlineData("civil_list_styles", "sectionViewBandSet")]
+    [InlineData("civil_list_styles", "groupPlot")]
+    [InlineData("civil_list_objects", "sections")]
+    [InlineData("civil_list_objects", "sectionViews")]
+    public void SectionInventoryKindsPassCatalogValidation(string toolName, string kind)
+    {
+        var schema = ToolCatalog.All.Single(t => t.Name == toolName).Schema;
+        var args = new JObject { ["sessionId"] = "session", ["documentId"] = "doc", ["kind"] = kind };
+        ToolCatalog.Validate(args, schema);
+        args["kind"] = "unknownSectionKind";
+        Assert.Throws<CadFault>(() => ToolCatalog.Validate(args, schema));
+    }
     [Fact] public void OneMetreSectionsIncludeBothEndsOnce()
         => Assert.Equal(Enumerable.Range(0, 16).Select(i => (double)i), SectionPlanning.Stations(0, 15, 1));
     [Fact] public void NonDivisibleIntervalIncludesLastStation()

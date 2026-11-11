@@ -20,7 +20,7 @@
   {
     "name": "cad_create_text",
     "method": "cad.create_text",
-    "description": "Crea texto DBText; altura positiva y rotación en radianes. Lote atómico; conserva operationId UUID ante reintentos.",
+    "description": "Crea TEXT (por defecto) o MTEXT nativo; altura positiva y rotación en radianes. styleHandle selecciona un estilo sin modificarlo. Lote atómico; conserva operationId UUID ante reintentos.",
     "write": true
   },
   {
@@ -309,6 +309,114 @@
     "name": "civil_update_object_style",
     "method": "civil.update_object_style",
     "description": "Asigna un estilo compatible a superficie, eje, perfil, vista, punto, feature line, corredor o línea de muestreo. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_list_text_styles",
+    "method": "cad.text_styles",
+    "description": "Lista estilos de texto nativos: nombre/handle, archivo/familia, altura fija, factor de ancho e inclinación en radianes.",
+    "write": false
+  },
+  {
+    "name": "cad_list_fonts",
+    "method": "cad.fonts",
+    "description": "Lista familias TTF instaladas y fuentes SHX de las rutas de soporte de Autodesk. No instala fuentes.",
+    "write": false
+  },
+  {
+    "name": "cad_upsert_text_style",
+    "method": "cad.upsert_text_style",
+    "description": "Crea estilo TTF/SHX validado. Un estilo existente solo se modifica con updateExisting=true: el cambio compartido puede afectar todos sus usuarios. font acepta familia TTF instalada o archivo .ttf/.shx disponible. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_set_text_style",
+    "method": "cad.set_text_style",
+    "description": "Asigna un estilo existente solo a los TEXT/MTEXT indicados. No cambia la definición del estilo ni elimina objetos. MTEXT conserva sus formatos locales explícitos. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_update_text",
+    "method": "cad.update_text",
+    "description": "Edita TEXT/MTEXT por handles conservando identidad. Alineaciones: baseLeft/baseCenter/baseRight (solo TEXT) o top/middle/bottom + Left/Center/Right. position mueve el punto de anclaje WCS. Texto MTEXT admite formato nativo. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_list_hatch_patterns",
+    "method": "cad.hatch_patterns",
+    "description": "Lista SOLID y patrones PAT disponibles en las rutas de soporte; devuelve nombre y patternType predefined/custom.",
+    "write": false
+  },
+  {
+    "name": "cad_create_hatch",
+    "method": "cad.create_hatch",
+    "description": "Crea HATCH nativo desde curvas cerradas coplanares en ModelSpace (Polyline, Circle, Ellipse o Spline). Exteriores disjuntos e islas interiores disjuntas; conserva contornos. Ángulo en radianes, escala positiva y color ACI 0..256. Associative=true enlaza los contornos. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_get_hatch",
+    "method": "cad.hatch_info",
+    "description": "Consulta patrón, escala, ángulo, asociatividad, área y bucles de un HATCH nativo.",
+    "write": false
+  },
+  {
+    "name": "cad_update_hatch",
+    "method": "cad.update_hatch",
+    "description": "Edita HATCH sin recrearlo. Para activar asociatividad requiere contornos disponibles; puede proporcionarse outerHandles/islandHandles para reconstruir bucles. Los HATCH MCP conservan referencias de contorno aun sin asociatividad. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_list_lineweights",
+    "method": "cad.lineweights",
+    "description": "Lista grosores nativos: código en centésimas de mm (25=0.25mm), modos ByLayer/ByBlock/Default y valores permitidos para capas.",
+    "write": false
+  },
+  {
+    "name": "cad_list_linetypes",
+    "method": "cad.linetypes",
+    "description": "Lista tipos de línea cargados, handles, descripción y patrón nativo de trazos/espacios en unidades del dibujo.",
+    "write": false
+  },
+  {
+    "name": "cad_list_linetype_definitions",
+    "method": "cad.linetype_definitions",
+    "description": "Lista definiciones disponibles en un archivo LIN local o de soporte (acad.lin/acadiso.lin). No carga ni cambia el dibujo.",
+    "write": false
+  },
+  {
+    "name": "cad_load_linetypes",
+    "method": "cad.load_linetypes",
+    "description": "Carga nombres explícitos desde un archivo .LIN local. Valida todos en una base temporal y clona los registros nativos en una sola transacción. Conserva tipos ya cargados; no redefine patrones compartidos. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_get_line_properties",
+    "method": "cad.line_properties",
+    "description": "Consulta propiedades explícitas y de capa por handles: grosor, tipo, escala y valores heredados ByLayer. ByBlock requiere contexto de inserción y se informa como no resuelto.",
+    "write": false
+  },
+  {
+    "name": "cad_set_line_properties",
+    "method": "cad.set_line_properties",
+    "description": "Asigna grosor/tipo/escala/capa/color a entidades AutoCAD por handles. lineweight: centésimas de mm, -1 ByLayer, -2 ByBlock, -3 Default; linetype: nombre cargado, ByLayer o ByBlock. No cambia geometría ni definiciones compartidas. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_set_layer_line_properties",
+    "method": "cad.set_layer_line_properties",
+    "description": "Cambia grosor, tipo cargado o color solo de las capas existentes indicadas. Conserva propiedades omitidas. Los objetos ByLayer heredan los cambios; las capas no tienen escala propia. Lote atómico; conserva operationId UUID ante reintentos.",
+    "write": true
+  },
+  {
+    "name": "cad_get_line_settings",
+    "method": "cad.line_settings",
+    "description": "Consulta LTSCALE (escala global), CELTSCALE (nuevos objetos) y visualización de grosores. No cambia dibujo ni configuración de impresión.",
+    "write": false
+  },
+  {
+    "name": "cad_set_line_settings",
+    "method": "cad.set_line_settings",
+    "description": "Configura explícitamente LTSCALE, CELTSCALE o visualización de grosores en el documento activo. Escalas positivas; no cambia CTB/STB ni configura ventanas gráficas. Lote atómico; conserva operationId UUID ante reintentos.",
     "write": true
   }
 ]

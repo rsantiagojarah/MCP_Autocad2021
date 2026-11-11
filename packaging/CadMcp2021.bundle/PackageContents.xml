@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ApplicationPackage SchemaVersion="1.0" AppVersion="0.4.0" ProductCode="{25E562A0-5979-4AB0-979C-79A31D639658}" UpgradeCode="{EC4F896E-63A5-484E-91B6-2A4B871C13B1}" Name="CadMcp2021" Description="Puente MCP para AutoCAD y Civil 3D 2021" Author="CadMcp2021">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage SchemaVersion="1.0" AppVersion="0.6.0" ProductCode="{9164116B-CCB1-4B86-A842-F24AEB2EE9FB}" UpgradeCode="{EC4F896E-63A5-484E-91B6-2A4B871C13B1}" Name="CadMcp2021" Description="Puente MCP para AutoCAD y Civil 3D 2021" Author="CadMcp2021">
   <CompanyDetails Name="CadMcp2021" />
   <Components>
     <RuntimeRequirements OS="Win64" Platform="AutoCAD*" SeriesMin="R24.0" SeriesMax="R24.0" />

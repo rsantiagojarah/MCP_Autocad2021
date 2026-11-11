@@ -1,6 +1,11 @@
 param()
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
+[xml]$currentProperties = Get-Content -LiteralPath (Join-Path $projectRoot 'Directory.Build.props') -Raw
+if ($currentProperties.SelectSingleNode('/Project/PropertyGroup/Version').InnerText -eq '0.6.0') {
+    & (Join-Path $PSScriptRoot 'Build-LineGraphicsRelease.ps1')
+    return
+}
 $env:DOTNET_CLI_HOME = Join-Path $projectRoot '.tools\cli'
 if (-not $env:NUGET_PACKAGES) { $env:NUGET_PACKAGES = Join-Path $env:USERPROFILE '.nuget\packages' }
 $dotnet = Join-Path $projectRoot '.tools\dotnet10\dotnet.exe'

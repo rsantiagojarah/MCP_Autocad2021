@@ -17,7 +17,7 @@ public static class CadExtendedOperations
         r.Register("cad.entity_geometry", Geometry);
         r.Register("cad.create_polyline3d", Polyline3D, true);
         r.Register("cad.create_circle", CircleEntity, true);
-        r.Register("cad.create_text", TextEntity, true);
+        r.Register("cad.create_text", CadTextOperations.Create, true);
         r.Register("cad.create_solid", Solid, true);
         r.Register("cad.transform_entities", Transform, true);
         r.Register("cad.delete_entities", Delete, true);
@@ -26,6 +26,9 @@ public static class CadExtendedOperations
         r.Register("cad.boolean_solids", Boolean, true);
         r.Register("cad.create_retaining_wall", Wall, true);
         r.Register("cad.set_view", View, true);
+        CadTextOperations.Register(r);
+        CadHatchOperations.Register(r);
+        CadLineGraphicsOperations.Register(r);
     }
     private static JToken Geometry(BridgeRequest r) => CadExecution.Run(r, false, (doc, tr) =>
     {
@@ -74,12 +77,6 @@ public static class CadExtendedOperations
         var a = r.Arguments;
         using var circle = new Circle(ToPoint(ToolArgs.Point(a, "center")), Vector3d.ZAxis, ToolArgs.Number(a, "radius", positive: true));
         CadExecution.Append(doc, tr, circle, CadExecution.Layer(doc, tr, ToolArgs.Text(a, "layer"))); return CadExecution.Identity(circle);
-    }, true);
-    private static JToken TextEntity(BridgeRequest r) => CadExecution.Run(r, true, (doc, tr) =>
-    {
-        var a = r.Arguments;
-        using var text = new DBText { Position = ToPoint(ToolArgs.Point(a, "position")), TextString = ToolArgs.Text(a, "text"), Height = ToolArgs.Number(a, "height", positive: true), Rotation = ToolArgs.Number(a, "rotation", 0) };
-        CadExecution.Append(doc, tr, text, CadExecution.Layer(doc, tr, ToolArgs.Text(a, "layer"))); return CadExecution.Identity(text);
     }, true);
     private static JToken Solid(BridgeRequest r) => CadExecution.Run(r, true, (doc, tr) =>
     {

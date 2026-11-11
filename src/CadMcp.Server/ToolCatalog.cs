@@ -42,6 +42,12 @@ public static partial class ToolCatalog
         return new ToolDefinition(name, method, description, mutation, Object(props, all.ToArray()));
     }
     private static JObject Page(int max = 500) => new JObject { ["offset"] = Integer(0, 1000000), ["limit"] = Integer(1, max) };
+    private static JObject Lineweight(bool layer = false)
+    {
+        var schema = Integer(-3,211); schema["enum"] = new JArray(LineGraphicsRules.Lineweights(layer));
+        schema["description"] = "Centésimas de mm: 25=0.25mm; -1=ByLayer, -2=ByBlock, -3=Default. Usa cad_list_lineweights.";
+        return schema;
+    }
     public static readonly IReadOnlyList<ToolDefinition> All = Build();
     private static IReadOnlyList<ToolDefinition> Build()
     {
@@ -59,8 +65,8 @@ public static partial class ToolCatalog
             Tool("cad_list_layers", "cad.layers", "Consulta capas y propiedades con paginación.", Page(), System.Array.Empty<string>()),
             Tool("cad_query_entities", "cad.query_entities", "Consulta ModelSpace: filtros por capa, tipo DXF y caja WCS; devuelve propiedades y metrados. Recorre nextOffset hasta null; no alteres el dibujo durante la paginación.", query, System.Array.Empty<string>()),
             Tool("cad_create_entities", "cad.create_entities", "Crea puntos, líneas o polilíneas 2D en lote atómico. Requiere capas existentes, WCS y unidades coincidentes. No convierte coordenadas ni unidades.", create, new[] { "coordinateSpace", "units", "entities" }, mutation: true),
-            Tool("cad_upsert_layers", "cad.upsert_layers", "Crea capas o actualiza su color ACI en un lote atómico.", new JObject { ["layers"] = Array(Object(new JObject { ["name"] = String(), ["colorIndex"] = Integer(1, 255) }, "name", "colorIndex"), 1, 100) }, new[] { "layers" }, mutation: true),
-            Tool("cad_update_entities", "cad.update_entities", "Actualiza capa o color ACI por handle en lote atómico; respeta capas bloqueadas.", new JObject { ["entities"] = Array(Object(new JObject { ["handle"] = String(), ["layer"] = String(), ["colorIndex"] = Integer(0, 256) }, "handle"), 1, 10000) }, new[] { "entities" }, mutation: true),
+            Tool("cad_upsert_layers", "cad.upsert_layers", "Crea capas o actualiza color ACI; admite lineweight (centésimas de mm) y linetype ya cargado opcionales en un lote atómico.", new JObject { ["layers"] = Array(Object(new JObject { ["name"] = String(), ["colorIndex"] = Integer(1, 255), ["lineweight"] = Lineweight(true), ["linetype"] = String() }, "name", "colorIndex"), 1, 100) }, new[] { "layers" }, mutation: true),
+            Tool("cad_update_entities", "cad.update_entities", "Actualiza capa/color y opcionalmente lineweight, linetype y linetypeScale por handle en lote atómico; respeta capas bloqueadas.", new JObject { ["entities"] = Array(Object(new JObject { ["handle"] = String(), ["layer"] = String(), ["colorIndex"] = Integer(0, 256), ["lineweight"] = Lineweight(), ["linetype"] = String(), ["linetypeScale"] = new JObject { ["type"] = "number" } }, "handle"), 1, 10000) }, new[] { "entities" }, mutation: true),
             Tool("cad_get_request_status", "request.status", "Consulta queued/running/completed/failed y el resultado original de un UUID. NOT_FOUND no demuestra que una operación de un arranque anterior no se ejecutó.", new JObject { ["requestId"] = String() }, new[] { "requestId" }, false),
             Tool("civil_list_surfaces", "civil.surfaces", "Lista superficies y handles. Solo sesiones con módulo Civil 3D.", Page(), System.Array.Empty<string>()),
             Tool("civil_list_alignments", "civil.alignments", "Lista alineamientos, estaciones y hasta 100 perfiles por alineamiento; indica si se truncaron.", Page(100), System.Array.Empty<string>()),

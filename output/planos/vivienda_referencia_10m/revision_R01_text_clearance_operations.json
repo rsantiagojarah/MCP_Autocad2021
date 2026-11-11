@@ -1,0 +1,146 @@
+{
+  "11": {
+    "operationId": "2cc94ea7-a5ae-40a8-9c9b-d53fcfb56982",
+    "result": {
+      "texts": [
+        {
+          "handle": "59F",
+          "type": "DBText",
+          "layer": "V10_A_TEXTO",
+          "dxfType": "TEXT",
+          "text": "BAÑO",
+          "height": 150.0,
+          "rotation": 0.0,
+          "styleHandle": "B4",
+          "alignment": "BaseCenter",
+          "position": {
+            "x": 2450.0,
+            "y": 19700.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "identityPreserved": true
+    }
+  },
+  "13": {
+    "operationId": "2abf4cdc-b34a-4f8b-b8a7-be3b37489196",
+    "result": {
+      "texts": [
+        {
+          "handle": "5A1",
+          "type": "DBText",
+          "layer": "V10_A_TEXTO",
+          "dxfType": "TEXT",
+          "text": "S.H.",
+          "height": 150.0,
+          "rotation": 0.0,
+          "styleHandle": "B4",
+          "alignment": "BaseCenter",
+          "position": {
+            "x": 9350.0,
+            "y": 9150.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "identityPreserved": true
+    }
+  },
+  "14": {
+    "operationId": "f24b9e02-381b-4725-bdcf-e93f85b960de",
+    "result": {
+      "texts": [
+        {
+          "handle": "5A2",
+          "type": "DBText",
+          "layer": "V10_A_TEXTO",
+          "dxfType": "TEXT",
+          "text": "JARDÍN",
+          "height": 150.0,
+          "rotation": 0.0,
+          "styleHandle": "B4",
+          "alignment": "BaseCenter",
+          "position": {
+            "x": 8450.0,
+            "y": 10650.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "identityPreserved": true
+    }
+  },
+  "15": {
+    "operationId": "e6e652b1-de11-45af-99e2-8a8e4ab034d3",
+    "result": {
+      "texts": [
+        {
+          "handle": "5A3",
+          "type": "DBText",
+          "layer": "V10_A_TEXTO",
+          "dxfType": "TEXT",
+          "text": "JARDÍN POSTERIOR",
+          "height": 150.0,
+          "rotation": 0.0,
+          "styleHandle": "B4",
+          "alignment": "BaseCenter",
+          "position": {
+            "x": 7500.0,
+            "y": 21750.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "identityPreserved": true
+    }
+  },
+  "18": {
+    "operationId": "85480931-18d2-4244-a9df-1a3dcc18a2f7",
+    "result": {
+      "texts": [
+        {
+          "handle": "5A6",
+          "type": "DBText",
+          "layer": "V10_A_TEXTO",
+          "dxfType": "TEXT",
+          "text": "JARDÍN",
+          "height": 150.0,
+          "rotation": 0.0,
+          "styleHandle": "B5",
+          "alignment": "BaseCenter",
+          "position": {
+            "x": 8500.0,
+            "y": 420.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "identityPreserved": true
+    }
+  },
+  "42": {
+    "operationId": "8ad0ec56-5fe1-42af-9a8e-6596cdbaec46",
+    "result": {
+      "texts": [
+        {
+          "handle": "5BE",
+          "type": "DBText",
+          "layer": "V10_A_TEXTO",
+          "dxfType": "TEXT",
+          "text": "S.H.",
+          "height": 150.0,
+          "rotation": 0.0,
+          "styleHandle": "B4",
+          "alignment": "BaseCenter",
+          "position": {
+            "x": 24275.0,
+            "y": 9150.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "identityPreserved": true
+    }
+  }
+}

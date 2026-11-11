@@ -83,7 +83,7 @@ while (true)
         initialized = true;
         var offered = message["params"]?.Value<string>("protocolVersion");
         var supported = new[] { "2024-11-05", "2025-03-26", "2025-06-18", "2025-11-25" };
-        await Write(new { jsonrpc = "2.0", id, result = new { protocolVersion = supported.Contains(offered) ? offered : "2025-11-25", capabilities = new { tools = new { listChanged = false } }, serverInfo = new { name = "cadmcp-2021-compatibility", version = "0.4.0" }, instructions = "Consulta sesiones, documentos y unidades antes de dibujar. Las herramientas nuevas requieren bridgeVersion 0.4.0. El historial de UUID dura solo hasta reiniciar el puente. Usa cad_get_request_status ante resultados inciertos." } });
+        await Write(new { jsonrpc = "2.0", id, result = new { protocolVersion = supported.Contains(offered) ? offered : "2025-11-25", capabilities = new { tools = new { listChanged = false } }, serverInfo = new { name = "cadmcp-2021-compatibility", version = typeof(CadGateway).Assembly.GetName().Version!.ToString(3) }, instructions = "Consulta sesiones, documentos y unidades antes de dibujar. Las herramientas de texto/HATCH requieren puente 0.5.0 y las de grosores/tipos/escalas de línea 0.6.0. El historial de UUID dura solo hasta reiniciar el puente. Usa cad_get_request_status ante resultados inciertos." } });
         continue;
     }
     if (!initialized) { await Write(new { jsonrpc = "2.0", id, error = new { code = -32002, message = "Primero llama initialize." } }); continue; }

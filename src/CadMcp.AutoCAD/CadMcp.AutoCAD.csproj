@@ -5,6 +5,7 @@
     <AutoCADDir Condition="'$(AutoCADDir)' == ''">C:\Program Files\Autodesk\AutoCAD 2021</AutoCADDir>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.Drawing" />
     <ProjectReference Include="../CadMcp.Core/CadMcp.Core.csproj" />
     <Reference Include="AcCoreMgd"><HintPath>$(AutoCADDir)\AcCoreMgd.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="AcDbMgd"><HintPath>$(AutoCADDir)\AcDbMgd.dll</HintPath><Private>false</Private></Reference>

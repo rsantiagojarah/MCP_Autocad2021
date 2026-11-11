@@ -1,6 +1,6 @@
 # AutoCAD y Civil 3D 2021
 
-Complemento local para ChatGPT de escritorio y Codex, versión 0.4.0. Servidor: .NET 10 con SDK oficial MCP para C# 1.2.0.
+Complemento local para ChatGPT de escritorio y Codex, versión 0.6.0. Servidor: .NET 10 con SDK oficial MCP para C# 1.2.0.
 Host .NET seleccionado: C:\Users\rsant\Desktop\ProyectosPy\MCP_Autocad2021\.tools\dotnet10\dotnet.exe. Conserva esa instalación y la carpeta del proyecto en su ubicación actual.
 
 Abre AutoCAD o Civil 3D 2021, carga CadMcp.AutoCAD.dll mediante NETLOAD y comprueba CADMCPSTATUS. Ese plugin está en el paquete Autodesk original del proyecto. Abre un chat local nuevo y selecciona este complemento para consultar sesiones y documentos.

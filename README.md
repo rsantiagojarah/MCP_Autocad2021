@@ -1,6 +1,10 @@
 # CadMcp2021
 
-Servidor MCP local y plugins en C# para AutoCAD y Civil 3D 2021, versión 0.4.0 preparada.
+Servidor MCP local y plugins en C# para AutoCAD y Civil 3D 2021, versión 0.6.0 preparada.
+
+La versión **0.6.0 ofrece 89 herramientas** y añade grosores nativos, carga y asignación de tipos `.LIN`, escalas de línea por objeto/globales y valoración por capa. Véase [docs/LINEAS.md](docs/LINEAS.md). Paquete: `artifacts/expanded-0.6.0`; preparación con `scripts/Build-LineGraphicsRelease.ps1` y actualización con `scripts/Install-LineGraphicsMcp.ps1`, después de guardar dibujos y cerrar Autodesk.
+
+La versión **0.5.0 incorpora 80 herramientas**: añade fuentes TTF/SHX, estilos y edición TEXT/MTEXT, y sombreados HATCH nativos con islas y asociatividad. La implementación, actualización y límites están en [docs/TEXTO_HATCH.md](docs/TEXTO_HATCH.md). Paquete: `artifacts/expanded-0.5.0`; preparación con `scripts/Build-TextHatchRelease.ps1` y actualización con `scripts/Install-TextHatchMcp.ps1` tras guardar dibujos y cerrar Autodesk. Los antecedentes siguientes corresponden a versiones anteriores.
 
 El catálogo incorpora **71 herramientas** para geometría y sólidos 3D, muros, COGO, TIN y volúmenes, alineamientos, perfiles y secciones, redes de gravedad y corredores. Las seis herramientas nuevas permiten fuentes dinámicas, grupos/vistas nativas de sección y cortes exactos de sólidos regenerables por MCP. Véase [docs/SECCIONES.md](docs/SECCIONES.md) para sus límites y [docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md) para el catálogo anterior.
 

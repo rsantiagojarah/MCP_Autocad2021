@@ -1,0 +1,29 @@
+PLANTAS DE VIVIENDA - FRENTE 10 m
+
+El plano se creó directamente por MCP en el documento abierto Drawing1.dwg.
+Revisión R01 aplicada por MCP: 1298 entidades nativas editables, incluidos
+114 textos, 103 círculos y 21 HATCH asociativos. No hay HATCH en muros.
+Se recortaron 18 tramas de piso con 35 islas para que no atraviesen muebles.
+Se corrigieron encuentros de muros, vanos y giros, armarios y rótulos.
+Se despejaron la entrada y el acceso al baño posterior.
+Las comprobaciones geométricas no detectaron cruces entre puertas,
+muros, muebles ni armarios. Mobiliario: curvas y polilíneas editables.
+El dibujo de AutoCAD está en milímetros: 10 m = 10000 mm.
+No se guardó ni cerró el dibujo. Usa Ctrl+S en AutoCAD para guardar tu DWG.
+
+Archivos entregados:
+- Vivienda_10m_plantas_A01_R01.pdf: lámina A2 horizontal, escala 1:75.
+  Imprimir al 100 %, sin ajustar al papel.
+- Vivienda_10m_plantas_A01_R01.dxf: copia CAD con modelo en METROS,
+  13 bloques de mobiliario, cotas DIMENSION y presentación A2.
+- Vista_previa_A01.png: vista de la lámina, no sustituye la geometría CAD.
+- verificacion_revision_R01_mcp.json: comprobaciones finales en AutoCAD.
+
+Grosor por capa: muros 0.50 mm; límites 0.35 mm; carpintería 0.25 mm;
+mobiliario 0.18 mm; cotas/textos 0.13 mm; detalles/tramas 0.09 mm.
+
+El usuario indicó 10 m, interpretados como frente del lote.
+El fondo de 22.30 m se estimó a partir de la proporción de la imagen.
+Las cotas interiores son referenciales y requieren comprobación.
+Se conservó la distribución principal de la referencia; no es una
+reproducción milimétrica ni un plano técnico listo para construcción.

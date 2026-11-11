@@ -14,8 +14,8 @@ public sealed class ExtendedToolTests
     private static JObject Schema(string name) => ToolCatalog.All.Single(t => t.Name == name).Schema;
     [Fact] public void ExtendedCatalogIsCompleteAndMethodsUnique()
     {
-        Assert.Equal(71, ToolCatalog.All.Count);
-        Assert.Equal(71, ToolCatalog.All.Select(t => t.Method).Distinct().Count());
+        Assert.Equal(89, ToolCatalog.All.Count);
+        Assert.Equal(89, ToolCatalog.All.Select(t => t.Method).Distinct().Count());
         var all = ToolCatalog.All.Where(t => t.Mutates);
         foreach (var tool in all) Assert.Contains("operationId", tool.Schema["required"]!.Values<string>());
     }

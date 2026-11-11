@@ -1,0 +1,841 @@
+{
+  "passed": true,
+  "revision": "R01",
+  "transport": "MCP -> AutoCAD 2021 native database",
+  "document": "Drawing1.dwg",
+  "documentId": "47156328-4a99-4636-a4dc-eaf2df3d1959",
+  "units": "Millimeters",
+  "entityCount": 1298,
+  "nativeTypes": {
+    "LINE": 595,
+    "LWPOLYLINE": 465,
+    "CIRCLE": 103,
+    "TEXT": 114,
+    "HATCH": 21
+  },
+  "unrelatedEntitiesPreserved": [],
+  "geometryChecks": {
+    "clippedFloorHatches": 18,
+    "hatchIslands": 35,
+    "clippedUnderlayStrokes": 4,
+    "doorConflicts": [],
+    "furnitureWallConflicts": [],
+    "wallHatches": 0,
+    "wardrobeFurnitureConflicts": [],
+    "furniturePairConflicts": []
+  },
+  "nativeClippedHatches": [
+    {
+      "handle": "762",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 1,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "4F9"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 16965000.0
+    },
+    {
+      "handle": "765",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 3,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "4FA"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "715"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "716"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 1097345.8176323287
+    },
+    {
+      "handle": "768",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 1,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "4FB"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 6104000.0
+    },
+    {
+      "handle": "76B",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 5,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "4FC"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "717"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "718"
+          ]
+        },
+        {
+          "index": 3,
+          "loopType": "Default",
+          "associatedHandles": [
+            "719"
+          ]
+        },
+        {
+          "index": 4,
+          "loopType": "Default",
+          "associatedHandles": [
+            "71A"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 4759112.795998849
+    },
+    {
+      "handle": "76E",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 3,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "71B"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "71C"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "71D"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 2512066.75289228
+    },
+    {
+      "handle": "771",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 3,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "71E"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "71F"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "720"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 3054859.3006110415
+    },
+    {
+      "handle": "774",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 3,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "4FF"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "721"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "722"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 1564128.4147109017
+    },
+    {
+      "handle": "777",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "GRASS",
+      "patternType": "predefined",
+      "scale": 35.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 6,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "500"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "723"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "724"
+          ]
+        },
+        {
+          "index": 3,
+          "loopType": "Default",
+          "associatedHandles": [
+            "725"
+          ]
+        },
+        {
+          "index": 4,
+          "loopType": "Default",
+          "associatedHandles": [
+            "726"
+          ]
+        },
+        {
+          "index": 5,
+          "loopType": "Default",
+          "associatedHandles": [
+            "727"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 7628919.932605393
+    },
+    {
+      "handle": "77A",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 1,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "728"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 1900000.0
+    },
+    {
+      "handle": "77D",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "GRASS",
+      "patternType": "predefined",
+      "scale": 35.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 6,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "502"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "729"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "72A"
+          ]
+        },
+        {
+          "index": 3,
+          "loopType": "Default",
+          "associatedHandles": [
+            "72B"
+          ]
+        },
+        {
+          "index": 4,
+          "loopType": "Default",
+          "associatedHandles": [
+            "72C"
+          ]
+        },
+        {
+          "index": 5,
+          "loopType": "Default",
+          "associatedHandles": [
+            "72D"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 3232119.9433337823
+    },
+    {
+      "handle": "780",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "GRASS",
+      "patternType": "predefined",
+      "scale": 35.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 6,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "503"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "72E"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "72F"
+          ]
+        },
+        {
+          "index": 3,
+          "loopType": "Default",
+          "associatedHandles": [
+            "730"
+          ]
+        },
+        {
+          "index": 4,
+          "loopType": "Default",
+          "associatedHandles": [
+            "731"
+          ]
+        },
+        {
+          "index": 5,
+          "loopType": "Default",
+          "associatedHandles": [
+            "732"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 3414519.9285670663
+    },
+    {
+      "handle": "783",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 1,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "733"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 4908600.0
+    },
+    {
+      "handle": "786",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 1,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "505"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 3888000.0
+    },
+    {
+      "handle": "789",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 3,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "734"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "735"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "736"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 4026463.0846702605
+    },
+    {
+      "handle": "78C",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 3,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "737"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "738"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "739"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 3054851.848329574
+    },
+    {
+      "handle": "78F",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 3,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "73A"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "73B"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "73C"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 1978809.6729884893
+    },
+    {
+      "handle": "792",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 3,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "51B"
+          ]
+        },
+        {
+          "index": 1,
+          "loopType": "Default",
+          "associatedHandles": [
+            "73D"
+          ]
+        },
+        {
+          "index": 2,
+          "loopType": "Default",
+          "associatedHandles": [
+            "73E"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 1564184.452308789
+    },
+    {
+      "handle": "795",
+      "type": "Hatch",
+      "layer": "V10_A_PISO_TRAMA",
+      "dxfType": "HATCH",
+      "pattern": "NET",
+      "patternType": "predefined",
+      "scale": 140.0,
+      "angle": 0.0,
+      "associative": true,
+      "loopCount": 1,
+      "colorIndex": 256,
+      "elevation": 0.0,
+      "normal": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "areaUnavailable": true,
+      "loops": [
+        {
+          "index": 0,
+          "loopType": "Outermost",
+          "associatedHandles": [
+            "51C"
+          ]
+        }
+      ],
+      "sourcePreserved": true,
+      "expectedBoundaryArea": 5832000.0
+    }
+  ],
+  "wallHatches": 0,
+  "drawingSaved": false,
+  "finalFurnitureCheck": true,
+  "accessChecks": {
+    "frontAccessObstructionAreaM2": 0.0,
+    "rearBathroomApproachObstructionAreaM2": 0.0
+  },
+  "pdfDxfNormalHatchStyleVerified": true,
+  "roomLabelsRepositionedForDoorAndPlantClearance": 6
+}

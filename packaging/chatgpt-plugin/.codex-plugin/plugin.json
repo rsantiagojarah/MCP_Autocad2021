@@ -1,17 +1,22 @@
 {
   "name": "autocad-civil3d-2021",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "description": "Consultas y operaciones por lotes en AutoCAD y Civil 3D 2021 mediante un puente local.",
   "mcpServers": "./.mcp.json",
   "requires_local_executor": true,
   "interface": {
     "displayName": "AutoCAD y Civil 3D 2021",
     "shortDescription": "Conecta tus dibujos con herramientas CAD locales.",
-    "longDescription": "65 herramientas para geometría 2D/3D y muros, COGO, TIN y volúmenes, ejes, perfiles y secciones, redes de gravedad y corredores. Servidor .NET 10 con SDK oficial MCP. Requiere el puente CadMcp 0.3.0 en Autodesk 2021.",
+    "longDescription": "89 herramientas para Autodesk 2021: grosores, tipos LIN, escalas de línea, geometría, texto TTF/SHX y HATCH nativos, terrenos, perfiles, secciones, redes y corredores. Servidor .NET 10; las propiedades de línea requieren el puente CadMcp 0.6.0.",
     "developerName": "Proyecto CAD local",
     "category": "Productivity",
-    "capabilities": ["Read", "Write"],
-    "defaultPrompt": ["Consulta las sesiones disponibles de AutoCAD y Civil 3D y sus documentos abiertos."],
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Consulta las sesiones disponibles de AutoCAD y Civil 3D y sus documentos abiertos."
+    ],
     "brandColor": "#167C80"
   }
 }

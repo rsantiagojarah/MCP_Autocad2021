@@ -64,13 +64,17 @@ try:
     process.stdin.flush()
     catalog = request("tools/list", {})["tools"]
     names = {item["name"] for item in catalog}
-    assert len(names) == 71 and "civil_create_cogo_points" in names and "cad_list_sessions" in names, names
+    assert len(names) == 89 and "civil_create_cogo_points" in names and "cad_list_sessions" in names, names
     assert {"civil_get_section_sources", "civil_set_section_sources", "civil_create_multiple_section_views", "civil_update_section_views", "civil_add_solid_sections", "civil_generate_cross_sections"} <= names
     assert {"cad_create_retaining_wall", "civil_create_tin_surface", "civil_create_alignment", "civil_create_pipe_network", "civil_create_corridor"} <= names
+    assert {"cad_list_text_styles", "cad_list_fonts", "cad_upsert_text_style", "cad_set_text_style", "cad_update_text", "cad_list_hatch_patterns", "cad_create_hatch", "cad_get_hatch", "cad_update_hatch"} <= names
+    assert {"cad_list_lineweights", "cad_list_linetypes", "cad_list_linetype_definitions", "cad_load_linetypes", "cad_get_line_properties", "cad_set_line_properties", "cad_set_layer_line_properties", "cad_get_line_settings", "cad_set_line_settings"} <= names
     for item in catalog:
         if item["name"] in {"cad_create_retaining_wall", "civil_create_layout_profile", "civil_add_network_parts"}:
             assert "operationId" in item["inputSchema"]["required"], item
-    report["checks"].extend(["interactive_initialize", "71_tools", "section_tools", "extended_tools", "mutation_UUID_schema"])
+    report["checks"].extend(["interactive_initialize", "89_tools", "section_tools", "extended_tools", "mutation_UUID_schema"])
+    report["checks"].append("text_hatch_tools")
+    report["checks"].append("line_graphics_tools")
     assert request("ping", {}) == {}
     report["checks"].append("ping")
     discovery = tool("cad_list_sessions", {})["result"]
@@ -81,6 +85,28 @@ try:
     invalid = tool("cad_query_entities", {"sessionId": "invalid", "documentId": "invalid", "limit": 501}, expect_error=True)
     assert invalid["error"]["code"] == "INVALID_ARGUMENT", invalid
     report["checks"].append("tool_validation")
+    text_hatch_cases = {
+        "cad_upsert_text_style": {"name":"ArialLocal", "font":"Arial"},
+        "cad_update_text": {"handles":["A"], "height":2},
+        "cad_create_hatch": {"outerHandles":["A"], "pattern":"ANSI31", "layer":"0"},
+        "cad_update_hatch": {"handle":"A", "scale":2}
+    }
+    for new_name, extra in text_hatch_cases.items():
+        rejected = tool(new_name, {"sessionId":"invalid", "documentId":"d", "operationId":"bad", "coordinateSpace":"WCS", "units":"Meters", **extra}, expect_error=True)
+        assert rejected["error"]["code"] == "INVALID_ARGUMENT", rejected
+    rejected = tool("cad_set_text_style", {"sessionId":"invalid", "documentId":"d", "operationId":"bad", "handles":["A"], "styleHandle":"B"}, expect_error=True)
+    assert rejected["error"]["code"] == "INVALID_ARGUMENT", rejected
+    report["checks"].append("text_hatch_mutations_reject_invalid_UUID")
+    line_cases = {
+        "cad_load_linetypes": {"file":"acadiso.lin", "names":["DASHED"]},
+        "cad_set_line_properties": {"handles":["A"], "lineweight":25, "linetype":"ByLayer", "linetypeScale":2},
+        "cad_set_layer_line_properties": {"layers":["WALL"], "lineweight":50},
+        "cad_set_line_settings": {"globalScale":2, "displayLineweight":True}
+    }
+    for line_name, extra in line_cases.items():
+        rejected = tool(line_name, {"sessionId":"invalid", "documentId":"d", "operationId":"bad", **extra}, expect_error=True)
+        assert rejected["error"]["code"] == "INVALID_ARGUMENT", rejected
+    report["checks"].append("line_graphics_mutations_reject_invalid_UUID")
     section_base = {"sessionId":"invalid", "documentId":"d", "operationId":"not-a-uuid", "coordinateSpace":"WCS", "units":"Meters"}
     section_cases = {
         "civil_set_section_sources": {"sampleLineGroupHandle":"A", "sourceHandles":["B"]},

@@ -1,0 +1,1028 @@
+{
+  "drawing": "Vivienda_10m_plantas_A01.dxf",
+  "frontageMetres": 10,
+  "depthMetres": 22.3,
+  "depthSource": "inferred from reference image; unverified",
+  "units": "Metres",
+  "paper": "A2 594 x 420 mm",
+  "plotScale": "1:75",
+  "modelEntityCount": 687,
+  "modelEntityTypes": {
+    "LINE": 337,
+    "LWPOLYLINE": 173,
+    "ARC": 23,
+    "CIRCLE": 31,
+    "HATCH": 18,
+    "INSERT": 55,
+    "TEXT": 40,
+    "DIMENSION": 10
+  },
+  "blockDefinitions": 13,
+  "furniture": [
+    {
+      "block": "M_LAVADORA",
+      "handle": "1D0",
+      "kind": "M_LAVADORA",
+      "point": [
+        2.7,
+        11.92
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_FREGADERO",
+      "handle": "1D2",
+      "kind": "M_FREGADERO",
+      "point": [
+        3.27,
+        11.92
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_COCINA_4_HORNILLAS",
+      "handle": "1D7",
+      "kind": "M_COCINA_4_HORNILLAS",
+      "point": [
+        4.08,
+        13.55
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_FREGADERO",
+      "handle": "1D9",
+      "kind": "M_FREGADERO",
+      "point": [
+        4.95,
+        15.72
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_DUCHA_90",
+      "handle": "1E6",
+      "kind": "M_DUCHA_90",
+      "point": [
+        2.99,
+        20.43
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_INODORO",
+      "handle": "1E8",
+      "kind": "M_INODORO",
+      "point": [
+        1.84,
+        20.57
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_LAVATORIO",
+      "handle": "1EA",
+      "kind": "M_LAVATORIO",
+      "point": [
+        1.88,
+        19.53
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_DUCHA_90",
+      "handle": "1EE",
+      "kind": "M_DUCHA_90",
+      "point": [
+        9.22,
+        16.58
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_INODORO",
+      "handle": "1F0",
+      "kind": "M_INODORO",
+      "point": [
+        7.56,
+        16.72
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_LAVATORIO",
+      "handle": "1F2",
+      "kind": "M_LAVATORIO",
+      "point": [
+        8.33,
+        16.76
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_INODORO",
+      "handle": "1F6",
+      "kind": "M_INODORO",
+      "point": [
+        9.38,
+        9.8
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_LAVATORIO",
+      "handle": "1F8",
+      "kind": "M_LAVATORIO",
+      "point": [
+        8.75,
+        10.02
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_SOFA_3_PLAZAS",
+      "handle": "21D",
+      "kind": "M_SOFA_3_PLAZAS",
+      "point": [
+        3.32,
+        6.5
+      ],
+      "rotation": 180
+    },
+    {
+      "block": "M_SOFA_3_PLAZAS",
+      "handle": "21F",
+      "kind": "M_SOFA_3_PLAZAS",
+      "point": [
+        4.92,
+        7.72
+      ],
+      "rotation": 270
+    },
+    {
+      "block": "M_BUTACA",
+      "handle": "221",
+      "kind": "M_BUTACA",
+      "point": [
+        2.17,
+        8.42
+      ],
+      "rotation": 90
+    },
+    {
+      "block": "M_COMEDOR_6",
+      "handle": "22B",
+      "kind": "M_COMEDOR_6",
+      "point": [
+        3.65,
+        10.27
+      ],
+      "rotation": 90
+    },
+    {
+      "block": "M_CAMA_DOBLE_170x210",
+      "handle": "22D",
+      "kind": "M_CAMA_DOBLE_170x210",
+      "point": [
+        2.95,
+        17.62
+      ],
+      "rotation": 90
+    },
+    {
+      "block": "M_CAMA_DOBLE_170x210",
+      "handle": "23C",
+      "kind": "M_CAMA_DOBLE_170x210",
+      "point": [
+        8.35,
+        18.7
+      ],
+      "rotation": 90
+    },
+    {
+      "block": "M_CAMA_DOBLE_170x210",
+      "handle": "249",
+      "kind": "M_CAMA_DOBLE_170x210",
+      "point": [
+        8.75,
+        14.05
+      ],
+      "rotation": 90
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "255",
+      "kind": "vegetacion",
+      "point": [
+        5.0868,
+        20.957
+      ],
+      "rotation": 5
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "257",
+      "kind": "vegetacion",
+      "point": [
+        7.6642,
+        20.921
+      ],
+      "rotation": 22
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "259",
+      "kind": "vegetacion",
+      "point": [
+        8.7162,
+        21.362
+      ],
+      "rotation": 39
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "25B",
+      "kind": "vegetacion",
+      "point": [
+        6.4018,
+        21.488
+      ],
+      "rotation": 56
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "25D",
+      "kind": "vegetacion",
+      "point": [
+        4.666,
+        21.398
+      ],
+      "rotation": 73
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "262",
+      "kind": "vegetacion",
+      "point": [
+        7.7928,
+        11.1122
+      ],
+      "rotation": 3
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "264",
+      "kind": "vegetacion",
+      "point": [
+        8.7532,
+        11.0666
+      ],
+      "rotation": 20
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "266",
+      "kind": "vegetacion",
+      "point": [
+        9.1452,
+        11.6252
+      ],
+      "rotation": 37
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "268",
+      "kind": "vegetacion",
+      "point": [
+        8.2828,
+        11.7848
+      ],
+      "rotation": 54
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "26A",
+      "kind": "vegetacion",
+      "point": [
+        7.636,
+        11.6708
+      ],
+      "rotation": 71
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "26E",
+      "kind": "vegetacion",
+      "point": [
+        7.8212,
+        0.949
+      ],
+      "rotation": 4
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "270",
+      "kind": "vegetacion",
+      "point": [
+        8.7228,
+        0.897
+      ],
+      "rotation": 21
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "272",
+      "kind": "vegetacion",
+      "point": [
+        9.0908,
+        1.534
+      ],
+      "rotation": 38
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "274",
+      "kind": "vegetacion",
+      "point": [
+        8.2812,
+        1.716
+      ],
+      "rotation": 55
+    },
+    {
+      "block": "M_ARBUSTO",
+      "handle": "276",
+      "kind": "vegetacion",
+      "point": [
+        7.674,
+        1.586
+      ],
+      "rotation": 72
+    },
+    {
+      "block": "M_AUTO_SEDAN_190x440",
+      "handle": "285",
+      "kind": "M_AUTO_SEDAN_190x440",
+      "point": [
+        2.75,
+        2.85
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_SOFA_3_PLAZAS",
+      "handle": "389",
+      "kind": "M_SOFA_3_PLAZAS",
+      "point": [
+        19.32,
+        9.25
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_SOFA_3_PLAZAS",
+      "handle": "38B",
+      "kind": "M_SOFA_3_PLAZAS",
+      "point": [
+        21.22,
+        8.35
+      ],
+      "rotation": 270
+    },
+    {
+      "block": "M_BUTACA",
+      "handle": "38D",
+      "kind": "M_BUTACA",
+      "point": [
+        18.2,
+        8.15
+      ],
+      "rotation": 90
+    },
+    {
+      "block": "M_COMEDOR_6",
+      "handle": "397",
+      "kind": "M_COMEDOR_6",
+      "point": [
+        19.9,
+        5.85
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_COCINA_4_HORNILLAS",
+      "handle": "39C",
+      "kind": "M_COCINA_4_HORNILLAS",
+      "point": [
+        18.8,
+        12.08
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_FREGADERO",
+      "handle": "39E",
+      "kind": "M_FREGADERO",
+      "point": [
+        17.68,
+        11.0
+      ],
+      "rotation": 90
+    },
+    {
+      "block": "M_SILLA",
+      "handle": "3A2",
+      "kind": "M_SILLA",
+      "point": [
+        18.95,
+        10.05
+      ],
+      "rotation": 180
+    },
+    {
+      "block": "M_SILLA",
+      "handle": "3A4",
+      "kind": "M_SILLA",
+      "point": [
+        19.7,
+        10.05
+      ],
+      "rotation": 180
+    },
+    {
+      "block": "M_SILLA",
+      "handle": "3A6",
+      "kind": "M_SILLA",
+      "point": [
+        20.45,
+        10.05
+      ],
+      "rotation": 180
+    },
+    {
+      "block": "M_CAMA_DOBLE_170x210",
+      "handle": "3AB",
+      "kind": "M_CAMA_DOBLE_170x210",
+      "point": [
+        18.95,
+        17.62
+      ],
+      "rotation": 90
+    },
+    {
+      "block": "M_CAMA_DOBLE_170x210",
+      "handle": "3BA",
+      "kind": "M_CAMA_DOBLE_170x210",
+      "point": [
+        24.35,
+        18.7
+      ],
+      "rotation": 90
+    },
+    {
+      "block": "M_CAMA_DOBLE_170x210",
+      "handle": "3C7",
+      "kind": "M_CAMA_DOBLE_170x210",
+      "point": [
+        24.75,
+        14.05
+      ],
+      "rotation": 90
+    },
+    {
+      "block": "M_DUCHA_90",
+      "handle": "3D2",
+      "kind": "M_DUCHA_90",
+      "point": [
+        25.22,
+        16.58
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_INODORO",
+      "handle": "3D4",
+      "kind": "M_INODORO",
+      "point": [
+        23.56,
+        16.72
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_LAVATORIO",
+      "handle": "3D6",
+      "kind": "M_LAVATORIO",
+      "point": [
+        24.33,
+        16.76
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_DUCHA_90",
+      "handle": "3DA",
+      "kind": "M_DUCHA_90",
+      "point": [
+        20.25,
+        13.55
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_INODORO",
+      "handle": "3DC",
+      "kind": "M_INODORO",
+      "point": [
+        21.35,
+        13.7
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_LAVATORIO",
+      "handle": "3DE",
+      "kind": "M_LAVATORIO",
+      "point": [
+        20.35,
+        12.93
+      ],
+      "rotation": 180
+    },
+    {
+      "block": "M_INODORO",
+      "handle": "3E1",
+      "kind": "M_INODORO",
+      "point": [
+        25.38,
+        9.8
+      ],
+      "rotation": 0
+    },
+    {
+      "block": "M_LAVATORIO",
+      "handle": "3E3",
+      "kind": "M_LAVATORIO",
+      "point": [
+        24.75,
+        10.02
+      ],
+      "rotation": 0
+    }
+  ],
+  "doors": [
+    {
+      "hinge": [
+        4.85,
+        16.225
+      ],
+      "width": 0.9,
+      "angle": 0,
+      "hand": 1
+    },
+    {
+      "hinge": [
+        6.1,
+        17.325
+      ],
+      "width": 0.75,
+      "angle": 0,
+      "hand": 1
+    },
+    {
+      "hinge": [
+        7.05,
+        12.9
+      ],
+      "width": 0.85,
+      "angle": 90,
+      "hand": -1
+    },
+    {
+      "hinge": [
+        7.05,
+        15.65
+      ],
+      "width": 0.75,
+      "angle": 90,
+      "hand": -1
+    },
+    {
+      "hinge": [
+        7.05,
+        8.9
+      ],
+      "width": 0.75,
+      "angle": 90,
+      "hand": -1
+    },
+    {
+      "hinge": [
+        8.325,
+        8.9
+      ],
+      "width": 0.7,
+      "angle": 90,
+      "hand": -1
+    },
+    {
+      "hinge": [
+        7.2,
+        4.2
+      ],
+      "width": 0.95,
+      "angle": 0,
+      "hand": 1
+    },
+    {
+      "hinge": [
+        6.75,
+        5.95
+      ],
+      "width": 0.95,
+      "angle": 180,
+      "hand": -1
+    },
+    {
+      "hinge": [
+        3.575,
+        19.2
+      ],
+      "width": 0.75,
+      "angle": 90,
+      "hand": 1
+    },
+    {
+      "hinge": [
+        1.55,
+        11.375
+      ],
+      "width": 0.8,
+      "angle": 0,
+      "hand": -1
+    },
+    {
+      "hinge": [
+        5.875,
+        12.0
+      ],
+      "width": 0.85,
+      "angle": 90,
+      "hand": 1
+    },
+    {
+      "hinge": [
+        1.55,
+        12.475
+      ],
+      "width": 0.8,
+      "angle": 0,
+      "hand": 1
+    },
+    {
+      "hinge": [
+        4.55,
+        0.2
+      ],
+      "width": 1.0,
+      "angle": 0,
+      "hand": 1
+    },
+    {
+      "hinge": [
+        20.85,
+        16.225
+      ],
+      "width": 0.9,
+      "angle": 0,
+      "hand": 1
+    },
+    {
+      "hinge": [
+        22.1,
+        17.325
+      ],
+      "width": 0.75,
+      "angle": 0,
+      "hand": 1
+    },
+    {
+      "hinge": [
+        23.05,
+        12.9
+      ],
+      "width": 0.85,
+      "angle": 90,
+      "hand": -1
+    },
+    {
+      "hinge": [
+        23.05,
+        15.65
+      ],
+      "width": 0.75,
+      "angle": 90,
+      "hand": -1
+    },
+    {
+      "hinge": [
+        23.05,
+        8.9
+      ],
+      "width": 0.75,
+      "angle": 90,
+      "hand": -1
+    },
+    {
+      "hinge": [
+        24.325,
+        8.9
+      ],
+      "width": 0.7,
+      "angle": 90,
+      "hand": -1
+    },
+    {
+      "hinge": [
+        22.85,
+        4.35
+      ],
+      "width": 0.85,
+      "angle": 90,
+      "hand": 1
+    },
+    {
+      "hinge": [
+        22.5,
+        4.3
+      ],
+      "width": 0.95,
+      "angle": 180,
+      "hand": -1
+    },
+    {
+      "hinge": [
+        21.875,
+        10.75
+      ],
+      "width": 0.85,
+      "angle": 90,
+      "hand": 1
+    },
+    {
+      "hinge": [
+        21.875,
+        12.65
+      ],
+      "width": 0.8,
+      "angle": 90,
+      "hand": 1
+    }
+  ],
+  "roomLabels": [
+    {
+      "name": "SALA",
+      "point": [
+        4.3,
+        8.62
+      ]
+    },
+    {
+      "name": "COMEDOR",
+      "point": [
+        5.35,
+        10.25
+      ]
+    },
+    {
+      "name": "COCINA",
+      "point": [
+        4.98,
+        12.65
+      ]
+    },
+    {
+      "name": "PATIO",
+      "point": [
+        2.45,
+        14.9
+      ]
+    },
+    {
+      "name": "LAV.",
+      "point": [
+        1.92,
+        12.15
+      ]
+    },
+    {
+      "name": "DORMITORIO 01",
+      "point": [
+        3.55,
+        18.72
+      ]
+    },
+    {
+      "name": "DORMITORIO 02",
+      "point": [
+        8.75,
+        19.82
+      ]
+    },
+    {
+      "name": "DORMITORIO 03",
+      "point": [
+        8.85,
+        12.75
+      ]
+    },
+    {
+      "name": "BAÑO",
+      "point": [
+        2.45,
+        19.7
+      ]
+    },
+    {
+      "name": "BAÑO",
+      "point": [
+        8.35,
+        15.68
+      ]
+    },
+    {
+      "name": "S.H.",
+      "point": [
+        9.35,
+        9.15
+      ]
+    },
+    {
+      "name": "JARDÍN",
+      "point": [
+        8.45,
+        10.65
+      ]
+    },
+    {
+      "name": "JARDÍN POSTERIOR",
+      "point": [
+        7.5,
+        21.75
+      ]
+    },
+    {
+      "name": "COCHERA",
+      "point": [
+        2.77,
+        5.31
+      ]
+    },
+    {
+      "name": "SALA",
+      "point": [
+        19.8,
+        7.35
+      ]
+    },
+    {
+      "name": "COMEDOR",
+      "point": [
+        21.5,
+        5.92
+      ]
+    },
+    {
+      "name": "COCINA",
+      "point": [
+        20.2,
+        11.3
+      ]
+    },
+    {
+      "name": "DORMITORIO 01",
+      "point": [
+        19.55,
+        18.72
+      ]
+    },
+    {
+      "name": "DORMITORIO 02",
+      "point": [
+        24.75,
+        19.82
+      ]
+    },
+    {
+      "name": "DORMITORIO 03",
+      "point": [
+        24.85,
+        12.75
+      ]
+    },
+    {
+      "name": "BAÑO",
+      "point": [
+        24.35,
+        15.68
+      ]
+    },
+    {
+      "name": "BAÑO",
+      "point": [
+        21.38,
+        12.8
+      ]
+    },
+    {
+      "name": "S.H.",
+      "point": [
+        25.35,
+        9.15
+      ]
+    },
+    {
+      "name": "TERRAZA",
+      "point": [
+        20.2,
+        3.4
+      ]
+    }
+  ],
+  "layers": {
+    "A_MURO_CORTE": {
+      "lineweightMm": 0.5,
+      "colorIndex": 7
+    },
+    "A_MURO_RELLENO": {
+      "lineweightMm": 0.09,
+      "colorIndex": 7
+    },
+    "A_LIMITE": {
+      "lineweightMm": 0.35,
+      "colorIndex": 7
+    },
+    "A_PUERTA": {
+      "lineweightMm": 0.25,
+      "colorIndex": 7
+    },
+    "A_VENTANA": {
+      "lineweightMm": 0.25,
+      "colorIndex": 7
+    },
+    "A_MUEBLE": {
+      "lineweightMm": 0.18,
+      "colorIndex": 7
+    },
+    "A_MUEBLE_DETALLE": {
+      "lineweightMm": 0.09,
+      "colorIndex": 8
+    },
+    "A_SANITARIO": {
+      "lineweightMm": 0.18,
+      "colorIndex": 7
+    },
+    "A_ESCALERA": {
+      "lineweightMm": 0.18,
+      "colorIndex": 7
+    },
+    "A_PISO_TRAMA": {
+      "lineweightMm": 0.09,
+      "colorIndex": 9
+    },
+    "A_PROYECCION": {
+      "lineweightMm": 0.13,
+      "colorIndex": 8
+    },
+    "A_VACIO": {
+      "lineweightMm": 0.09,
+      "colorIndex": 9
+    },
+    "A_JARDIN": {
+      "lineweightMm": 0.09,
+      "colorIndex": 8
+    },
+    "A_TEXTO": {
+      "lineweightMm": 0.13,
+      "colorIndex": 7
+    },
+    "A_COTA": {
+      "lineweightMm": 0.13,
+      "colorIndex": 7
+    },
+    "A_ROTULO": {
+      "lineweightMm": 0.18,
+      "colorIndex": 7
+    },
+    "A_EJE": {
+      "lineweightMm": 0.13,
+      "colorIndex": 8
+    },
+    "A_VPORT_NOPLOT": {
+      "lineweightMm": 0.09,
+      "colorIndex": 7
+    }
+  },
+  "auditErrors": 0,
+  "auditFixes": 0
+}

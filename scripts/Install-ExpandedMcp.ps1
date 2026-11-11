@@ -1,11 +1,11 @@
-param([switch]$BridgeOnly, [switch]$CheckOnly)
+param([switch]$BridgeOnly, [switch]$CheckOnly, [string]$ReleasePath)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
-$release = Join-Path $projectRoot 'artifacts\expanded-0.4.0'
+$release = if ($ReleasePath) { [IO.Path]::GetFullPath($ReleasePath) } else { Join-Path $projectRoot 'artifacts\expanded-0.4.0' }
 $identity = [Security.Principal.WindowsIdentity]::GetCurrent().Name
 if (-not $CheckOnly -and $identity -match '\\CodexSandbox') { throw 'Ejecuta este instalador desde tu PowerShell normal, con el mismo usuario que Civil 3D.' }
 $manifest = Get-Content -LiteralPath (Join-Path $release 'release-manifest.json') -Raw | ConvertFrom-Json
-if ($manifest.version -ne '0.4.0' -or $manifest.tools -ne 71) { throw 'Manifiesto de versión inesperado.' }
+if (-not (($manifest.version -eq '0.4.0' -and $manifest.tools -eq 71) -or ($manifest.version -eq '0.5.0' -and $manifest.tools -eq 80) -or ($manifest.version -eq '0.6.0' -and $manifest.tools -eq 89))) { throw 'Manifiesto de versión inesperado.' }
 foreach ($file in $manifest.files) {
     $source = [IO.Path]::GetFullPath((Join-Path $release $file.path))
     if (-not $source.StartsWith($release.TrimEnd('\')+'\', [StringComparison]::OrdinalIgnoreCase)) { throw 'Ruta fuera del paquete.' }
@@ -41,5 +41,5 @@ if (-not $BridgeOnly) {
     if ($LASTEXITCODE -ne 0) { throw 'No se completó la actualización del registro MCP.' }
     & (Join-Path $PSScriptRoot 'Build-DesktopPlugin.ps1') -Install -ServerRoot (Join-Path $release 'server')
 }
-[ordered]@{version='0.4.0';recordedUtc=[DateTime]::UtcNow.ToString('o');bridgeInstalled=$true;clientPluginRequested=(-not $BridgeOnly);bundleTarget=$bundleTarget;backup=$backup;reloadRequired=$true} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $projectRoot 'artifacts\test-results\expanded-installation.json') -Encoding utf8
-Write-Output 'Puente 0.4.0 instalado. Abre Civil 3D, recarga el cliente MCP y comprueba bridgeVersion=0.4.0 y 71 herramientas. La validación nativa de las seis herramientas nuevas está pendiente.'
+[ordered]@{version=$manifest.version;recordedUtc=[DateTime]::UtcNow.ToString('o');bridgeInstalled=$true;clientPluginRequested=(-not $BridgeOnly);bundleTarget=$bundleTarget;backup=$backup;reloadRequired=$true} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $projectRoot 'artifacts\test-results\expanded-installation.json') -Encoding utf8
+Write-Output "Puente $($manifest.version) instalado. Abre Autodesk, recarga el cliente MCP y comprueba bridgeVersion=$($manifest.version) y $($manifest.tools) herramientas. Consulta los reportes de validación de esta versión."

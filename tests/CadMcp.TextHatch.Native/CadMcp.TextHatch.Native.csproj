@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>CadMcp.TextHatch.NativeV2</AssemblyName>
+    <PlatformTarget>x64</PlatformTarget>
+    <AutoCADDir Condition="'$(AutoCADDir)' == ''">C:\Program Files\Autodesk\AutoCAD 2021</AutoCADDir>
+  </PropertyGroup>
+  <!-- Link the production implementation into a distinct test assembly. This permits testing
+       beside an older loaded bridge without replacing it or changing its registered methods. -->
+  <ItemGroup>
+    <Compile Include="../../src/CadMcp.Contracts/*.cs" />
+    <Compile Include="../../src/CadMcp.Core/*.cs" />
+    <Compile Include="../../src/CadMcp.AutoCAD/*.cs" Exclude="../../src/CadMcp.AutoCAD/BridgeExtension.cs" />
+    <Compile Include="../CadMcp.AutoCAD.Smoke/TextHatchCheckCommand.cs" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="AcCoreMgd"><HintPath>$(AutoCADDir)\AcCoreMgd.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="AcDbMgd"><HintPath>$(AutoCADDir)\AcDbMgd.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="AcMgd"><HintPath>$(AutoCADDir)\AcMgd.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

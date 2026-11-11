@@ -26,7 +26,7 @@ assert len(responses) == 8, responses
 by_id = {r["id"]: r for r in responses}
 assert by_id[1]["result"]["protocolVersion"] == "2025-11-25"
 tools = by_id[2]["result"]["tools"]
-assert len(tools) == 71 and len({t["name"] for t in tools}) == 71
+assert len(tools) == 89 and len({t["name"] for t in tools}) == 89
 assert "sessions" in json.loads(by_id[3]["result"]["content"][0]["text"])["result"]
 for i in (4, 7):
     assert by_id[i]["result"]["isError"]

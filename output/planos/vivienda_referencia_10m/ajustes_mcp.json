@@ -1,0 +1,179 @@
+{
+  "move_0": {
+    "operationId": "7c99c69e-9241-49b6-b660-358a4c0c37dd",
+    "result": {
+      "handles": [
+        "1BD",
+        "1BE",
+        "1BF",
+        "1C0",
+        "1C1"
+      ],
+      "copied": false
+    }
+  },
+  "move_1": {
+    "operationId": "fbaceba3-125d-45e2-941f-b929fc9412f1",
+    "result": {
+      "handles": [
+        "3CD",
+        "3CE",
+        "3CF",
+        "3D0",
+        "3D1"
+      ],
+      "copied": false
+    }
+  },
+  "move_2": {
+    "operationId": "668781ad-196c-4e9a-acd5-b06f017f4bf9",
+    "result": {
+      "handles": [
+        "3C6",
+        "3C7",
+        "3C8",
+        "3C9",
+        "3CA",
+        "3CB",
+        "3CC"
+      ],
+      "copied": false
+    }
+  },
+  "move_3": {
+    "operationId": "672171b1-ed52-4ed8-ac8e-d2ec372ed87f",
+    "result": {
+      "handles": [
+        "3D2",
+        "3D3",
+        "573"
+      ],
+      "copied": false
+    }
+  },
+  "label_11": {
+    "operationId": "3ee700f8-f2b5-4637-ad10-c7f879a05cc2",
+    "result": {
+      "texts": [
+        {
+          "handle": "59F",
+          "type": "DBText",
+          "layer": "V10_A_TEXTO",
+          "dxfType": "TEXT",
+          "text": "BAÑO",
+          "height": 180.0,
+          "rotation": 0.0,
+          "styleHandle": "B5",
+          "alignment": "BaseCenter",
+          "position": {
+            "x": 2650.0,
+            "y": 19380.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "identityPreserved": true
+    }
+  },
+  "label_34": {
+    "operationId": "e8910494-0f36-4778-b08d-61f868b4d694",
+    "result": {
+      "texts": [
+        {
+          "handle": "5B6",
+          "type": "DBText",
+          "layer": "V10_A_TEXTO",
+          "dxfType": "TEXT",
+          "text": "SALA",
+          "height": 180.0,
+          "rotation": 0.0,
+          "styleHandle": "B5",
+          "alignment": "BaseCenter",
+          "position": {
+            "x": 18725.0,
+            "y": 7350.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "identityPreserved": true
+    }
+  },
+  "label_41": {
+    "operationId": "d0a0f1b4-2854-4c29-aa38-c848e16ad5ff",
+    "result": {
+      "texts": [
+        {
+          "handle": "5BD",
+          "type": "DBText",
+          "layer": "V10_A_TEXTO",
+          "dxfType": "TEXT",
+          "text": "BAÑO",
+          "height": 180.0,
+          "rotation": 0.0,
+          "styleHandle": "B5",
+          "alignment": "BaseCenter",
+          "position": {
+            "x": 20305.0,
+            "y": 12800.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "identityPreserved": true
+    }
+  },
+  "remove_redundant_wall_curves": {
+    "operationId": "5bdbd026-75b7-4b22-aacc-965a6520f101",
+    "result": {
+      "deleted": 39,
+      "handles": [
+        "132",
+        "133",
+        "134",
+        "135",
+        "136",
+        "137",
+        "138",
+        "139",
+        "13A",
+        "13B",
+        "13C",
+        "13D",
+        "13E",
+        "13F",
+        "140",
+        "141",
+        "142",
+        "143",
+        "144",
+        "145",
+        "146",
+        "3AB",
+        "3AC",
+        "3AD",
+        "3AE",
+        "3AF",
+        "3B0",
+        "3B1",
+        "3B2",
+        "3B3",
+        "3B4",
+        "3B5",
+        "3B6",
+        "3B7",
+        "3B8",
+        "3B9",
+        "3BA",
+        "3BB",
+        "3BC"
+      ]
+    }
+  },
+  "final_view": {
+    "operationId": "8f62d68c-239d-4dc4-9234-635b454fba37",
+    "result": {
+      "orientation": "top"
+    }
+  }
+}

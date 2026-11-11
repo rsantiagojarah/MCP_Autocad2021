@@ -2,7 +2,9 @@ param([switch]$Install, [switch]$Compatibility, [string]$ServerRoot)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $variant = if ($Compatibility) { 'compatibility-net8' } else { 'official-net10' }
-$version = if ($Compatibility) { '0.4.0-compat' } else { '0.4.0' }
+[xml]$properties = Get-Content -LiteralPath (Join-Path $projectRoot 'Directory.Build.props') -Raw
+$projectVersion = $properties.SelectSingleNode('/Project/PropertyGroup/Version').InnerText
+$version = if ($Compatibility) { "$projectVersion-compat" } else { $projectVersion }
 $serverRoot = if ($ServerRoot) { [IO.Path]::GetFullPath($ServerRoot) } else { Join-Path $projectRoot "artifacts\$variant\server" }
 if (-not (Test-Path -LiteralPath (Join-Path $serverRoot 'CadMcp.Server.dll'))) { throw "No existe el servidor $variant publicado. Ejecuta scripts/Prepare-Official.ps1 para el servidor oficial o scripts/build.ps1 -Offline para compatibilidad." }
 $dotnetHost = if (-not $Compatibility -and (Test-Path -LiteralPath (Join-Path $projectRoot '.tools\dotnet10\dotnet.exe'))) {

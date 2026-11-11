@@ -97,6 +97,8 @@ public sealed class LayerSpec
 {
     public string Name { get; set; } = "";
     public int ColorIndex { get; set; } = 7;
+    public string? Linetype { get; set; }
+    public int? Lineweight { get; set; }
 }
 
 public sealed class UpdateEntitySpec
@@ -104,6 +106,9 @@ public sealed class UpdateEntitySpec
     public string Handle { get; set; } = "";
     public string? Layer { get; set; }
     public int? ColorIndex { get; set; }
+    public string? Linetype { get; set; }
+    public int? Lineweight { get; set; }
+    public double? LinetypeScale { get; set; }
 }
 
 public sealed class QueryEntitiesArgs
